@@ -1,12 +1,12 @@
 <script setup lang="ts">
-    import Dashboard, { type Categories } from '../../application/dashboard'
-    import Shows from '../../domain/show/repository';
-    import showAdapter from '../adapters/show-adapter';
+    import Dashboard, { type Categories } from '@/application/dashboard'
+    import Shows from '@/domain/show/repository';
+    import showAdapter from '@/src/adapters/show-adapter';
     import { onMounted, provide, ref } from 'vue';
-    import Emitter from '../util/emitter'
-import MyDashboard from '@/components/MyDashboard.vue';
-    import type Show from '../../domain/show/entity'
-import router from '@/router';
+    import Emitter from '@/src/util/emitter'
+    import MyDashboard from '@/src/components/MyDashboard.vue';
+    import type Show from '@/domain/show/entity'
+    import router from '@/src/router';
 
     const container = ref<HTMLElement | null>(null)
     const categories = ref<Categories | undefined>(undefined)
