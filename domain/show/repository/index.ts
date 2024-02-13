@@ -18,4 +18,9 @@ export default class Shows implements Repository<Show> {
         const response = await fetch(`${this.baseUrl}/shows`)
         return this.adapt(await response.json()) as Show[]
     }
+
+    async search(query: string) {
+        const response = await fetch(`${this.baseUrl}/search/shows?q=${query}`)
+        return this.adapt(await response.json()) as Show[]
+    }
 }

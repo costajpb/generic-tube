@@ -2,9 +2,9 @@ import Show from "../../domain/show/entity";
 import Shows from "../../domain/show/repository";
 import UseCase from "../shared/use-case";
 
-type Categories = Record<string, Show[]>
+export type Categories = Record<string, Show[]>
 
-export default class Home extends UseCase<Show> {
+export default class Dashboard extends UseCase<Show> {
     private categorize(shows: Show[]) {
         const categories: Categories = {}
         
@@ -26,5 +26,13 @@ export default class Home extends UseCase<Show> {
             const shows = await (this.repository as Shows).list()
             return this.categorize(shows)
         })()
+    }
+
+    display(show: Show) {
+        this.emit('dashboard:display', show)
+    }
+
+    search(query: string) {
+        return (this.repository as Shows).search(query)
     }
 }
