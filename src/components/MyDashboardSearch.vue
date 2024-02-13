@@ -1,20 +1,24 @@
 <script setup lang="ts">
     import { ref } from 'vue';
-import UseCase from '../../application/dashboard'
-import MyDashboardSearchResult from './MyDashboardSearchResult.vue';
+    import UseCase from '@/application/dashboard'
+    import MyDashboardSearchResult from '@/src/components/MyDashboardSearchResult.vue'
+    import type Show from '@/domain/show/entity';
+    import debounce from '@/src/util/debounce';
     
-    const result = ref(undefined)
+    const result = ref<Show[] | undefined>(undefined)
 
     const props = defineProps<{
         action: UseCase['search']
     }>()
 
-    const searchShows = (event: InputEvent) => {
+    const searchShows = (event: Event) => {
         const target = event.target as HTMLInputElement
 
         (async () => {
             const value = target.value
-            if (value.length > 3) result.value = await props.action(target.value)
+            if (value.length > 2) {
+                result.value = await props.action(target.value)
+            }
         })()
     }
 </script>
