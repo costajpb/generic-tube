@@ -1,4 +1,5 @@
 <script setup lang="ts">
+    // TODO: normalize naming: context-specific or general purpose?
     import Dashboard, { type Categories } from '@/application/dashboard'
     import Shows from '@/domain/show/repository';
     import showAdapter from '@/src/adapters/show-adapter';
@@ -24,7 +25,7 @@
         search.value = useCase.search.bind(useCase)
         
         container.value?.addEventListener('dashboard:display', (event) => {
-            const show = event.detail as Show
+            const show = (event as CustomEvent).detail as Show
             router.push(`/show/${show.id}`)
         })
     })

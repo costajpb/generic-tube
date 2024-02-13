@@ -1,7 +1,7 @@
 import Dashboard from "."
 import shows from './__fixtures__/shows.json'
 import categories from './__fixtures__/categories.json'
-import Show from "../../domain/show/entity"
+import type Show from "../../domain/show/entity"
 
 describe('application/dashboard', () => {
     test('categorize the most popular shows (i.e. highest weight) by genre', async () => {
@@ -13,7 +13,7 @@ describe('application/dashboard', () => {
         expect(await useCase.categories).toStrictEqual(categories)
     })
 
-    test('emit event to display show when requested', () => new Promise(done => {
+    test('emit event to display show when requested', () => new Promise<void>(done => {
         const useCase = new Dashboard({} as any)
         const spy = vi.fn()
         const show = {} as Show
