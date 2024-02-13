@@ -29,7 +29,7 @@ describe('application/dashboard', () => {
         expect(spy).toHaveBeenCalledWith(data)
     }))
 
-    test('search shows to get their details details', async () => {
+    test('search shows to get their details', async () => {
         const search = vi.fn().mockReturnValue([])
 
         const repository = {

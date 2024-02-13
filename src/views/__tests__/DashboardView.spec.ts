@@ -9,8 +9,8 @@ describe('DashboardView', () => {
         expect(wrapper.element).toMatchSnapshot()
     })
 
-    it('should display show upon request', async () => {
-        vi.spyOn(Dashboard.prototype, 'categories', 'get').mockReturnValue([])      
+    it('should display a show upon request', async () => {
+        vi.spyOn(Dashboard.prototype, 'categories', 'get').mockResolvedValue({})
         const push = vi.spyOn(router, 'push')
         const wrapper = mount(DashboardView)
         const detail = {id: 1}
@@ -22,5 +22,22 @@ describe('DashboardView', () => {
         })
 
         expect(push).toHaveBeenCalledWith(`/shows/${detail.id}`)
+    })
+
+    it('should allow searching shows', async () => {
+        const search = vi.spyOn(Dashboard.prototype, 'search')
+        const wrapper = mount(DashboardView)
+
+        await flushPromises()
+        
+        const input = wrapper.find('[type=search]');
+
+        const query = 'query';
+
+        (input.element as HTMLInputElement).value = query
+        
+        input.trigger('input')
+
+        expect(search).toHaveBeenCalledWith(query)
     })
 })
