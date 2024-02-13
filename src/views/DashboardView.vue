@@ -1,25 +1,22 @@
 <script setup lang="ts">
     // TODO: normalize naming: context-specific or general purpose?
-    import Dashboard, { type Categories } from '@/application/dashboard'
-    import Shows from '@/domain/show/repository';
-    import showAdapter from '@/src/adapters/show-adapter';
+    import { type Categories } from '@/application/dashboard'
+    import Dashboard from '@/src/adapters/use-cases/dashboard'
     import { onMounted, provide, ref } from 'vue';
-    import Emitter from '@/src/util/emitter'
     import MyDashboard from '@/src/components/MyDashboard.vue';
     import type Show from '@/domain/show/entity'
     import router from '@/src/router';
 
     const container = ref<HTMLElement | null>(null)
     const categories = ref<Categories | undefined>(undefined)
-    const display = ref<((show: Show) => void) | null>(null)
+    const display = ref<Dashboard['display'] | undefined>(undefined)
     provide('display', display)
 
     const search = ref<Dashboard['search'] | undefined>(undefined)
     provide('search', search)
 
     onMounted(async () => {
-        const repository = new Shows(showAdapter)
-        const useCase = new Dashboard(repository, new Emitter(container.value as HTMLElement))
+        const useCase = new Dashboard(container.value as HTMLElement)
         categories.value = await useCase.categories
         display.value = useCase.display.bind(useCase)
         search.value = useCase.search.bind(useCase)
