@@ -23,7 +23,7 @@
         
         container.value?.addEventListener('dashboard:display', (event) => {
             const show = (event as CustomEvent).detail as Show
-            router.push(`/show/${show.id}`)
+            router.push(`/shows/${show.id}`)
         })
     })
 </script>
