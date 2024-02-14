@@ -12,7 +12,7 @@
 
 <template>
     <article>
-        <h1>{{ props.name }}</h1>
+        <h2>{{ props.name }}</h2>
         <ol>
             <li v-for="show in props.shows" :key="show.id">
                 <a :href="'/shows/' + show.id" @click.prevent="display(show)" v-if="display">
