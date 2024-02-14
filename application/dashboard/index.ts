@@ -1,4 +1,4 @@
-import Show from "../../domain/show/entity";
+import type Show from "@/domain/show/entity";
 import Shows from "../../domain/show/repository";
 import UseCase from "../shared/use-case";
 

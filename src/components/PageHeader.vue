@@ -1,6 +1,3 @@
-<script lang="ts">
-</script>
-
 <template>
     <header>
         <h1>ABN Amro Tube</h1>
