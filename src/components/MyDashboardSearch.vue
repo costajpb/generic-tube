@@ -17,6 +17,7 @@
 
         (async () => {
             const value = target.value
+            if (!value.length) return result.value = undefined
             if (value.length > 2) {
                 isLoading.value = true
                 debounce(async () => {
