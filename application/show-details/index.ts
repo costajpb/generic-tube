@@ -14,4 +14,8 @@ export default class ShowDetails extends UseCase<Show> {
     get details(): Promise<Show> {
         return (this.repository as Shows).find(this.id)
     }
+
+    return() {
+        this.emit('showDetails:return')
+    }
 }
