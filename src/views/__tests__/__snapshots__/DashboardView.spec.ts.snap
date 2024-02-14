@@ -2,6 +2,28 @@
 
 exports[`DashboardView > should render properly 1`] = `
 <div>
-  <!--v-if-->
+  
+  <header
+    data-v-628430e3=""
+  >
+    <h1
+      class="title"
+      data-v-628430e3=""
+    >
+       ABN Amro Tube 
+    </h1>
+    
+    
+    <input
+      placeholder="Search shows..."
+      type="search"
+    />
+    <!--v-if-->
+    
+    
+  </header>
+  
+  
+  
 </div>
 `;

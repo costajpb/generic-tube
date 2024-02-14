@@ -6,6 +6,7 @@
     import MyDashboard from '@/src/components/MyDashboard.vue';
     import type Show from '@/domain/show/entity'
     import router from '@/src/router';
+    import PageLayout from '@/src/components/PageLayout.vue';
 
     const container = ref<HTMLElement | null>(null)
     const categories = ref<Categories | undefined>(undefined)
@@ -30,6 +31,8 @@
 
 <template>
     <div ref="container">
-        <MyDashboard :categories="categories" v-if="categories" />
+        <PageLayout :is-home="true">
+            <MyDashboard :categories="categories" v-if="categories" />
+        </PageLayout>
     </div>
 </template>

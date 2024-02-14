@@ -1,6 +1,14 @@
+<script setup lang="ts">
+    const props = defineProps<{
+        isHome?: boolean
+    }>()
+</script>
+
 <template>
     <header>
-        <h1>ABN Amro Tube</h1>
+        <component class="title" :is="props.isHome ? 'h1' : 'a'" :href="props.isHome ? undefined : '/'">
+            ABN Amro Tube
+        </component>
         <slot></slot>
     </header>
 </template>
@@ -19,17 +27,25 @@
         justify-content: space-between;
     }
 
-    h1 {        
+    .title {        
         font-size: var(--font-size-4);
+        font-weight: var(--font-weight-9);
+        line-height: var(--font-line-height-1);
         /* FIXME: add this to DS */
         color: white;
     }
 
-    h1:before {
+    .title:hover {
+        text-decoration: none;
+    }
+
+    .title:before {
         content: "📽️";
         background-color: var(--branding-color-secondary);
         padding: 0 var(--size-2);
         border-radius: var(--radius-2);
         margin-right: var(--size-2);
+        display: inline-block;
+        transform: rotate(-15deg);
     }
 </style>
