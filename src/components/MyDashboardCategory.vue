@@ -8,12 +8,17 @@
     }>()
 
     const display = inject('display') as ((show: Show) => void | undefined)
+
+    const scrollHorizontally = (event: WheelEvent) => {
+        const offset = event.deltaY;
+        (event.currentTarget as HTMLElement).scrollLeft += offset
+    }
 </script>
 
 <template>
     <article>
         <h2>{{ props.name }}</h2>
-        <ol>
+        <ol @wheel.prevent="scrollHorizontally">
             <li v-for="show in props.shows" :key="show.id">
                 <a :href="'/shows/' + show.id" @click.prevent="display(show)" v-if="display">
                     <img :src="show.coverImage" :alt="show.title" />
