@@ -15,9 +15,9 @@
 
 <style scoped>
     .categories {
-        margin-block: var(--size-7);
+        margin-block: var(--size-fluid-3);
         display: flex;
         flex-direction: column;
-        gap: var(--size-9);
+        gap: var(--size-fluid-3);
     }
 </style>
