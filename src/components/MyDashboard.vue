@@ -13,5 +13,16 @@ import type Show from 'domain/show/entity';
 
 <template>
     <MyDashboardSearch :action="action" v-if="action" />
-    <MyDashboardCategory v-for="(shows, name) in categories" :name="name" :shows="shows" />
+    <div class="categories">
+        <MyDashboardCategory v-for="(shows, name) in categories" :key="name" :name="name" :shows="shows" />
+    </div>
 </template>
+
+<style scoped>
+    .categories {
+        margin-block: var(--size-7);
+        display: flex;
+        flex-direction: column;
+        gap: var(--size-9);
+    }
+</style>
