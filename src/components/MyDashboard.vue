@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import type { Categories } from 'application/dashboard';
-import MyDashboardCategory from './MyDashboardCategory.vue';
+import MyDashboardCategory from '@/src/components/MyDashboardCategory.vue';
 import MyDashboardSearch from './MyDashboardSearch.vue';
 import { inject } from 'vue';
 import type Show from 'domain/show/entity';
+import PageHeader from '@/src/components/PageHeader.vue'
+
     defineProps<{
         categories: Categories
     }>()
@@ -12,7 +14,9 @@ import type Show from 'domain/show/entity';
 </script>
 
 <template>
-    <MyDashboardSearch :action="action" v-if="action" />
+    <PageHeader>
+        <MyDashboardSearch :action="action" v-if="action" />
+    </PageHeader>
     <div class="categories">
         <MyDashboardCategory v-for="(shows, name) in categories" :key="name" :name="name" :shows="shows" />
     </div>

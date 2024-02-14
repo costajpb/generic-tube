@@ -57,7 +57,7 @@
     }
 
     li + li {
-        margin-left: var(--size-4)
+        margin-left: var(--size-fluid-2)
     }
 
     img {

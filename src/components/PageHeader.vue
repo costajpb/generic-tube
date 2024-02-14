@@ -1,12 +1,13 @@
 <script lang="ts">
 </script>
+
 <template>
     <header>
-        <h1>
-            ABN Amro Tube
-        </h1>
+        <h1>ABN Amro Tube</h1>
+        <slot></slot>
     </header>
 </template>
+
 <style scoped>
     header {
         background: linear-gradient(
@@ -17,12 +18,14 @@
         padding-block: var(--size-2);
         padding-inline: var(--layout-margin-inline);
 
-        /* FIXME: add this to DS */
-        color: white;
+        display: flex;
+        justify-content: space-between;
     }
 
     h1 {        
         font-size: var(--font-size-4);
+        /* FIXME: add this to DS */
+        color: white;
     }
 
     h1:before {
