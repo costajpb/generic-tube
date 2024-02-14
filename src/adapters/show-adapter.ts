@@ -3,7 +3,7 @@ import type Show from '../../domain/show/entity'
 type show = {
     id: string
     name: string
-    image: {
+    image: null | {
         original: string
     }
     genres: string[]
@@ -24,8 +24,18 @@ function isShowResource(data: unknown): data is show {
     return !!data && typeof data === 'object'
         && 'id' in data
         && 'name' in data
-        && 'image' in data && !!data.image && typeof data.image === 'object' && 'original' in data.image
+        && 'image' in data && (data.image === null || (typeof data.image === 'object' && 'original' in data.image))
         && 'genres' in data && Array.isArray(data.genres)
+}
+
+export class InvalidResourceError extends Error {
+    readonly resource: unknown
+
+    constructor(message: string, resource: unknown) {
+        super(message)
+        this.resource = resource
+        this.name = 'InvalidResourceError'
+    }
 }
 
 function adaptSingleResource(data: unknown): Show {
@@ -35,13 +45,13 @@ function adaptSingleResource(data: unknown): Show {
     } else if (isSearchResource(data)) {
         resource = data.show
     } else {
-        throw new Error('Invalid resource')
+        throw new InvalidResourceError('Invalid resource', data)
     }
 
     return {
         id: parseInt(`${resource.id}`),
         title: `${resource.name}`,
-        coverImage: `${resource.image.original}`,
+        coverImage: resource.image?.original,
         genres: resource.genres
     }
 }

@@ -5,6 +5,7 @@
     import type Show from '@/domain/show/entity';
     import debounce from '@/src/util/debounce';
     
+    const isLoading = ref<boolean | undefined>(undefined)
     const result = ref<Show[] | undefined>(undefined)
 
     const props = defineProps<{
@@ -17,7 +18,11 @@
         (async () => {
             const value = target.value
             if (value.length > 2) {
-                result.value = await props.action(target.value)
+                isLoading.value = true
+                debounce(async () => {
+                    result.value = await props.action(target.value)
+                    isLoading.value = false
+                })
             }
         })()
     }

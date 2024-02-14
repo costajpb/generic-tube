@@ -24,8 +24,9 @@ describe('DashboardView', () => {
         expect(push).toHaveBeenCalledWith(`/shows/${detail.id}`)
     })
 
-    it('should allow searching shows', async () => {
-        const search = vi.spyOn(Dashboard.prototype, 'search')
+    it('should allow searching shows with debounce', async () => {
+        vi.useFakeTimers()
+        const search = vi.spyOn(Dashboard.prototype, 'search').mockImplementation(() => [])
         const wrapper = mount(DashboardView)
 
         await flushPromises()
@@ -38,6 +39,10 @@ describe('DashboardView', () => {
         
         input.trigger('input')
 
+        vi.runAllTimers()
+
         expect(search).toHaveBeenCalledWith(query)
+
+        vi.useRealTimers()
     })
 })
