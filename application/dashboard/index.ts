@@ -31,8 +31,4 @@ export default class Dashboard extends UseCase<Show> {
     display(show: Show) {
         this.emit('dashboard:display', show)
     }
-
-    search(query: string) {
-        return (this.repository as Shows).search(query)
-    }
 }

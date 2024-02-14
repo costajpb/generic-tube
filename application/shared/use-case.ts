@@ -1,6 +1,6 @@
 import EventEmitter from 'events'
-import Entity from '../../domain/shared/entity'
-import Repository from '../../domain/shared/repository'
+import type Entity from '@/domain/shared/entity'
+import type Repository from '@/domain/shared/repository'
 
 export interface Emitter {
     emit: (event: string, data: any) => void
@@ -22,5 +22,9 @@ export default abstract class UseCase<T extends Entity> implements Emitter {
 
     on(event: string, handler: (data: unknown) => void) {
         this.emitter.on(event, handler)
+    }
+
+    search(query: string) {
+        return (this.repository as Shows).search(query)
     }
 }

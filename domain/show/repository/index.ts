@@ -1,5 +1,5 @@
-import Show from "../entity";
-import Repository from '../../shared/repository'
+import type Show from "../entity";
+import type Repository from '../../shared/repository'
 
 export default class Shows implements Repository<Show> {
     readonly baseUrl: string
@@ -22,5 +22,10 @@ export default class Shows implements Repository<Show> {
     async search(query: string) {
         const response = await fetch(`${this.baseUrl}/search/shows?q=${query}`)
         return this.adapt(await response.json()) as Show[]
+    }
+
+    async find(id: Show['id']) {
+        const response = await fetch(`${this.baseUrl}/shows/${id}`)
+        return this.adapt(await response.json()) as Show
     }
 }
