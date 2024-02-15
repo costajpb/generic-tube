@@ -25,7 +25,7 @@ export default class Shows implements Repository<Show> {
     }
 
     async find(id: Show['id']) {
-        const response = await fetch(`${this.baseUrl}/shows/${id}`)
+        const response = await fetch(`${this.baseUrl}/shows/${id}?embed=episodes`)
         return this.adapt(await response.json()) as Show
     }
 }

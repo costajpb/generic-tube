@@ -13,11 +13,10 @@ describe('adapters/tv-maze', () => {
         summary: 'summary',
         type: 'type',
         language: 'language',
-        officialSite: 'website',
-        episodes: []
+        officialSite: 'website'
     }
 
-    it('should adapt a single resource', () => {
+    it('should adapt a single show resource', () => {
         const actual = tvMazeAdapter(data)
 
         const expected: Show = {
@@ -28,11 +27,37 @@ describe('adapters/tv-maze', () => {
             summary: data.summary,
             type: data.type,
             language: data.language,
-            website: data.officialSite,
-            episodes: data.episodes as []
+            website: data.officialSite
         }
 
-        expect(actual).toStrictEqual(expected)
+        expect(actual).toEqual(expected)
+    })
+
+    it('should adapt a show resource with episodes', () => {
+        const episode = {
+            id: 1,
+            name: 'Episode name',
+            summary: 'Episode summary',
+            image: {
+                original: 'original-image'
+            }
+        }
+
+        const actual = tvMazeAdapter({
+            ...data,
+            _embedded: {
+                episodes: [episode]
+            }
+        }) as Show
+
+        expect(actual.episodes).toEqual([
+            {
+                id: episode.id,
+                title: episode.name,
+                summary: episode.summary,
+                coverImage: episode.image.original
+            }
+        ])
     })
 
     it('should adapt an array of resources', () => {
@@ -47,12 +72,11 @@ describe('adapters/tv-maze', () => {
                 summary: data.summary,
                 type: data.type,
                 language: data.language,
-                website: data.officialSite,
-                episodes: data.episodes as []
+                website: data.officialSite
             }
         ]
 
-        expect(actual).toStrictEqual(expected)
+        expect(actual).toEqual(expected)
     })
 
     it('should handle the search resource', () => {
@@ -73,10 +97,9 @@ describe('adapters/tv-maze', () => {
             summary: data.summary,
             type: data.type,
             language: data.language,
-            website: data.officialSite,
-            episodes: data.episodes as []
+            website: data.officialSite
         }]
 
-        expect(actual).toStrictEqual(expected)
+        expect(actual).toEqual(expected)
     })
 })
