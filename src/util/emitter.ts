@@ -6,6 +6,7 @@ export default class Emitter {
     }
 
     emit(event: string, data?: object) {
+        // XXX: should this be replaced with Vue emit?
         this.element?.dispatchEvent(
             new CustomEvent(event, {
                 bubbles: true,
