@@ -4,6 +4,7 @@
     import MyDashboardSearchResult from '@/src/components/MyDashboardSearchResult.vue'
     import type Show from '@/domain/show/entity';
     import debounce from '@/src/util/debounce';
+    import ShowSearchTrigger from './ShowSearchTrigger.vue';
     
     const isLoading = ref<boolean | undefined>(undefined)
     const result = ref<Show[] | undefined>(undefined)
@@ -39,23 +40,66 @@
     const showResults = computed(() => !isTransitioning.value && isActive.value)
 </script>
 <template>
-    <div class="container" :data-is-active="isActive" v-click-outside="deactivate">
-        <input @transitionstart="transitionStart" @transitionend="transitionEnd" @focus="activate" placeholder="Search shows..." type="search" @input="searchShows" />
+    <ShowSearchTrigger anchor="search" />
+    <section id="search" class="container" :data-is-active="isActive" v-click-outside="deactivate">
+        <div class="actions">
+            <a href="#">Close</a>
+            <input @transitionstart="transitionStart" @transitionend="transitionEnd" @focus="activate" placeholder="Search shows..." type="search" @input="searchShows" />
+        </div>
         <MyDashboardSearchResult :result="result" v-if="result" v-show="showResults" />
-    </div>
+    </section>
 </template>
 
 <style lang="postcss">
-    .container {
+    .actions {
+        position: sticky;
+        top: 0;
+        display: flex;
+        gap: var(--size-2);
+    }
+
+    #search {
+        background: white;
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        overflow: auto;
+        top: 0;
+        left: 100%;
+        transition: left ease 300ms;
+        z-index: var(--layer-5);
+        display: flex;
+        flex-direction: column;
+        padding: var(--layout-margin-inline);
+
+        &:target {
+            left: 0;
+        }
+    }
+
+    input[type="search"] {
+        flex: 1 1 0
+        /* order: -1; */
+    }
+
+
+    /* FIXME: use custom media */
+    @media (min-width: 700px) {
+        a[href="#search"] {
+            display: none
+        }
+    }
+
+    /* .container {
         position: relative;
     }
 
     input {
-        transition: width ease-in-out 500ms;
+        transition: width ease-in-out 300ms;
         width: 15em;
 
         .container[data-is-active="true"] & {
             width: 100%
         }
-    }
+    } */
 </style>

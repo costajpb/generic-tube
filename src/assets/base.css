@@ -1,4 +1,4 @@
-@import "https://unpkg.com/open-props/normalize.min.css";
+/* @import "https://unpkg.com/open-props/normalize.min.css"; */
 @import "https://unpkg.com/open-props";
 
 *,
@@ -7,9 +7,21 @@
   box-sizing: border-box;
 }
 
+body, body * {
+  all: initial;
+}
+
+a {
+  cursor: pointer;
+}
+
 :root {
   --branding-color-primary-100: #008479;
   --branding-color-primary-200: #005f5e;
   --branding-color-secondary: #f3c000;
   --layout-margin-inline: var(--size-4);
+}
+
+html {
+  font-family: var(--font-sans);
 }

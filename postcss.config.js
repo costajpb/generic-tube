@@ -1,5 +1,6 @@
 export default {
     plugins: {
-        'postcss-nesting': {}
+        'postcss-nesting': {},
+        'postcss-custom-media': {},
     },
 }

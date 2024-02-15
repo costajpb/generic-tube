@@ -6,7 +6,7 @@ import type Show from 'domain/show/entity';
 </script>
 
 <template>
-    <ol>
+    <ol class="reset-list">
         <li v-for="show in result" :key="show.id">
             <img :src="show.coverImage" :alt="show.title" />
             <a :href="'/shows/' + show.id">{{ show.title }}</a>
@@ -17,19 +17,19 @@ import type Show from 'domain/show/entity';
 <style scoped>
     ol {
         text-align: initial;
-        position: absolute;
+        /* position: absolute;
         right: 0;
         top: 100%;
-        width: 100%;
-        z-index: var(--layer-3);
-        background: var(--surface-2);
-        box-shadow: var(--shadow-6);
-        border-radius: var(--radius-8);
-        padding: var(--size-1);
+        width: 100%; */
+        /* z-index: var(--layer-3); */
+        /* background: var(--surface-2); */
+        /* box-shadow: var(--shadow-6); */
+        /* border-radius: var(--radius-8); */
+        /* padding: var(--size-1); */
         display: flex;
         flex-direction: column;
-        max-height: 60vh;
-        overflow: auto;
+        /* max-height: 60vh; */
+        /* overflow: auto; */
         gap: var(--size-2);
         color: var(--branding-color-primary-200);
     }

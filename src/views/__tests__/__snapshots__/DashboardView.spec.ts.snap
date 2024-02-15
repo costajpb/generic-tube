@@ -12,15 +12,41 @@ exports[`DashboardView > should render properly 1`] = `
     >
        ABN Amro Tube 
     </h1>
-    
-    
-    <input
-      placeholder="Search shows..."
-      type="search"
-    />
-    <!--v-if-->
-    
-    
+    <div
+      class="extra"
+      data-v-628430e3=""
+    >
+      
+      
+      <a
+        data-v-af51883b=""
+        href="#search"
+      >
+        Search
+      </a>
+      <section
+        class="container"
+        data-is-active="false"
+        id="search"
+      >
+        <div
+          class="actions"
+        >
+          <a
+            href="#"
+          >
+            Close
+          </a>
+          <input
+            placeholder="Search shows..."
+            type="search"
+          />
+        </div>
+        <!--v-if-->
+      </section>
+      
+      
+    </div>
   </header>
   
   
