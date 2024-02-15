@@ -5,6 +5,7 @@ export type episode = {
         original: string
     }
     summary: string
+    runtime: number
 }
 
 export default function isEpisodesResource(data: unknown): data is episode[] {
@@ -14,5 +15,6 @@ export default function isEpisodesResource(data: unknown): data is episode[] {
         && 'name' in episode
         && 'image' in episode && (episode.image === null || (typeof episode.image === 'object' && 'original' in episode.image))
         && 'summary' in episode
+        && 'runtime' in episode
     })
 }

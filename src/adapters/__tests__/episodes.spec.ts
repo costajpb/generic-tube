@@ -9,7 +9,8 @@ describe('adapters/episode', () => {
                 image: {
                     original: 'original-image'
                 },
-                summary: 'summary'
+                summary: 'summary',
+                runtime: 56
             }
         ]
 

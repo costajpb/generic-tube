@@ -4,4 +4,5 @@ export default interface Episode extends Entity {
     title: string
     coverImage?: string
     summary: string
+    duration: number
 }

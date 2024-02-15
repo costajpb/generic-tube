@@ -18,7 +18,7 @@
 <template>
     <article>
         <h2>{{ props.name }}</h2>
-        <ol @wheel.prevent="scrollHorizontally">
+        <ol class="reset-list" @wheel.prevent="scrollHorizontally">
             <li v-for="show in props.shows" :key="show.id">
                 <a :href="'/shows/' + show.id" @click.prevent="display(show)" v-if="display">
                     <img :src="show.coverImage" :alt="show.title" />
@@ -41,13 +41,10 @@
 
     ol {
         display: flex;
-        list-style: none;
-        padding: 0;
         overflow: auto;
     }
 
     li {
-        padding: 0;
         flex: 0 0 15vw;
         height: 20vw;
         border-radius: var(--radius-2);

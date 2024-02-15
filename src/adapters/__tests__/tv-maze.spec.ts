@@ -40,7 +40,8 @@ describe('adapters/tv-maze', () => {
             summary: 'Episode summary',
             image: {
                 original: 'original-image'
-            }
+            },
+            runtime: 56
         }
 
         const actual = tvMazeAdapter({
@@ -55,7 +56,8 @@ describe('adapters/tv-maze', () => {
                 id: episode.id,
                 title: episode.name,
                 summary: episode.summary,
-                coverImage: episode.image.original
+                coverImage: episode.image.original,
+                duration: episode.runtime
             }
         ])
     })

@@ -1,1 +1,10 @@
 @import './base.css';
+
+.reset-list {
+    list-style: none;
+    padding: 0;
+}
+
+.reset-list li {
+    padding: 0;
+}

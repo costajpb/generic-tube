@@ -39,7 +39,8 @@ function adaptSingleResource(data: unknown): Show {
             id: parseInt(`${episode.id}`),
             title: episode.name,
             summary: episode.summary,
-            coverImage: episode.image?.original
+            coverImage: episode.image?.original,
+            duration: episode.runtime
         }))
     }
 }
