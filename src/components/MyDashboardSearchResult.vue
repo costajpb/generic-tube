@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import type Show from 'domain/show/entity';
-
     defineProps<{
         result: Show[]
     }>()
@@ -17,9 +16,11 @@ import type Show from 'domain/show/entity';
 
 <style scoped>
     ol {
-        position: fixed;
-        right: var(--layout-margin-inline);
-        top: 3rem;
+        text-align: initial;
+        position: absolute;
+        right: 0;
+        top: 100%;
+        width: 100%;
         z-index: var(--layer-3);
         background: var(--surface-2);
         box-shadow: var(--shadow-6);

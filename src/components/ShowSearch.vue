@@ -1,5 +1,5 @@
 <script setup lang="ts">
-    import { inject, ref, type Ref } from 'vue';
+    import { computed, inject, ref, type Ref } from 'vue';
     import UseCase from '@/application/shared/use-case'
     import MyDashboardSearchResult from '@/src/components/MyDashboardSearchResult.vue'
     import type Show from '@/domain/show/entity';
@@ -24,8 +24,38 @@
             }
         })()
     }
+
+    const isActive = ref(false)
+
+    const activate = () => isActive.value = true
+    const deactivate = () => isActive.value = false
+
+    const isTransitioning = ref(false)
+
+    const transitionStart = () => isTransitioning.value = true
+
+    const transitionEnd = () => isTransitioning.value = false
+
+    const showResults = computed(() => !isTransitioning.value && isActive.value)
 </script>
 <template>
-    <input placeholder="Search shows..." type="search" @input="searchShows" />
-    <MyDashboardSearchResult :result="result" v-if="result" />
+    <div class="container" :data-is-active="isActive" v-click-outside="deactivate">
+        <input @transitionstart="transitionStart" @transitionend="transitionEnd" @focus="activate" placeholder="Search shows..." type="search" @input="searchShows" />
+        <MyDashboardSearchResult :result="result" v-if="result" v-show="showResults" />
+    </div>
 </template>
+
+<style lang="postcss">
+    .container {
+        position: relative;
+    }
+
+    input {
+        transition: width ease-in-out 500ms;
+        width: 15em;
+
+        .container[data-is-active="true"] & {
+            width: 100%
+        }
+    }
+</style>

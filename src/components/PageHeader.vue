@@ -9,7 +9,9 @@
         <component class="title" :is="props.isHome ? 'h1' : 'a'" :href="props.isHome ? undefined : '/'">
             ABN Amro Tube
         </component>
-        <slot></slot>
+        <div class="extra">
+            <slot></slot>
+        </div>
     </header>
 </template>
 
@@ -23,8 +25,9 @@
         padding-block: var(--size-2);
         padding-inline: var(--layout-margin-inline);
 
-        display: flex;
-        justify-content: space-between;
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: var(--size-4);
     }
 
     .title {        
@@ -47,5 +50,9 @@
         margin-right: var(--size-2);
         display: inline-block;
         transform: rotate(-15deg);
+    }
+
+    .extra {
+        text-align: right
     }
 </style>
