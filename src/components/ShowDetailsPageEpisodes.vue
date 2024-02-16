@@ -22,7 +22,7 @@
     </ol>
 </template>
 
-<style scoped>
+<style scoped lang="postcss">
     * {
         all: unset;
     }
@@ -31,15 +31,31 @@
         cursor: pointer;
     }
 
+    h2 {
+        padding-inline: var(--layout-margin-inline);
+        display: block;
+        font-size: var(--font-size-5);
+        line-height: 2;
+        border-bottom: var(--border-size-2) var(--branding-color-primary-100) solid;
+    }
+
     ol {
         display: grid;
         /* FIXME: 300px */
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-        /* display: flex;
-        flex-direction: column; */
         gap: var(--size-4);
         max-height: 60vh;
         overflow: auto;
+        background: var(--gray-0);
+        /* box-sizing: content-box; */
+        /* padding: var(--layout-margin-inline); */
+        /* margin-left: calc(var(--layout-margin-inline) * -1); */
+        box-shadow: var(--inner-shadow-2);
+        padding: var(--layout-margin-inline);
+
+        @media (min-width: 700px) {
+            max-height: none;
+        }
     }
 
     h3 {
@@ -54,11 +70,23 @@
         ;
         gap: var(--size-2);
         grid-template-columns: minmax(10ch, 20vw) auto;
+        box-shadow: var(--shadow-4);
+        padding: var(--size-2) var(--size-4);
+        /* FIXME */
+        background-color: white;
+        border-radius: var(--radius-2);
+        transition: transform ease 300ms;
+
+        &:hover {
+            transform: scale(102%, 102%);
+        }
     }
 
     img {
         grid-area: e;
-        max-width: 100%;
+        width: 100%;
+        height: 90%;
+        object-fit: cover;
     }
 
     header {
@@ -69,6 +97,7 @@
         display: block;
         font-weight: var(--font-weight-6);
         font-size: var(--font-size-2);
+        color: var(--heading-color);
     }
 
     .summary {

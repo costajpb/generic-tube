@@ -21,6 +21,7 @@ a {
   --branding-color-primary-200: #005f5e;
   --branding-color-secondary: #f3c000;
   --layout-margin-inline: var(--size-4);
+  --heading-color: var(--branding-color-primary-200)
 }
 
 html {
