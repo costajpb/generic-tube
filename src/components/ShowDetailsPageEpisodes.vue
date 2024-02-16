@@ -23,6 +23,14 @@
 </template>
 
 <style scoped>
+    * {
+        all: unset;
+    }
+
+    a {
+        cursor: pointer;
+    }
+
     ol {
         display: flex;
         flex-direction: column;
@@ -38,23 +46,30 @@
     article {
         display: grid;
         grid-template-areas:
-            "a b"
-            "c c"
+            "e f"
+            "g g"
         ;
         gap: var(--size-2);
         grid-template-columns: minmax(10ch, 20vw) auto;
     }
 
     img {
-        grid-area: a;
+        grid-area: e;
+        max-width: 100%;
     }
 
     header {
-        grid-area: b;
+        grid-area: f;
+    }
+
+    h3 {
+        display: block;
+        font-weight: var(--font-weight-6);
+        font-size: var(--font-size-2);
     }
 
     .summary {
-        grid-area: c;
+        grid-area: g;
         -webkit-line-clamp: 2;
         display: -webkit-box;
         -webkit-box-orient: vertical;
