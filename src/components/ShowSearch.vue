@@ -1,5 +1,5 @@
 <script setup lang="ts">
-    import { computed, inject, ref, type Ref } from 'vue';
+    import { computed, ref } from 'vue';
     import MyDashboardSearchResult from '@/src/components/MyDashboardSearchResult.vue'
     import type Show from '@/domain/show/entity';
     import debounce from '@/src/util/debounce';
@@ -118,6 +118,7 @@
         /* order: -1; */
         transition: width ease-in-out 300ms;
         width: 15em;
+        line-height: 2;
 
         .container[data-is-active="true"] & {
             @media (min-width: 700px) {
@@ -133,17 +134,4 @@
             display: none
         }
     }
-
-    /* .container {
-        position: relative;
-    }
-
-    input {
-        transition: width ease-in-out 300ms;
-        width: 15em;
-
-        .container[data-is-active="true"] & {
-            width: 100%
-        }
-    } */
 </style>

@@ -6,14 +6,16 @@ import type Show from 'domain/show/entity';
 </script>
 
 <template>
-    <ol v-show="result.length">
-        <li v-for="show in result" :key="show.id">
-            <a :href="'/shows/' + show.id">
-                <img :src="show.coverImage" :title="show.title" :alt="show.title" />
-            </a>
-        </li>
-    </ol>
-    <p v-show="!result.length">No shows found! :(</p>
+    <div class="search-result">
+        <ol v-show="result.length">
+            <li v-for="show in result" :key="show.id">
+                <a :href="'/shows/' + show.id">
+                    <img :src="show.coverImage" :title="show.title" :alt="show.title" />
+                </a>
+            </li>
+        </ol>
+        <p v-show="!result.length">No shows found! :(</p>
+    </div>
 </template>
 
 <style scoped lang="postcss">
@@ -36,8 +38,9 @@ import type Show from 'domain/show/entity';
 
     img {
         max-width: 100%;
-        max-width: 100%;
         object-fit: cover;
+        display: block;
+        position: absolute;
 
         &:not([src]) {
             position: absolute;
@@ -75,20 +78,13 @@ import type Show from 'domain/show/entity';
         color: var(--branding-color-primary-200);
 
         @media (min-width: 700px) {
-            position: absolute;
-            width: 100%;
-            max-height: 60vh;
-            overflow: auto;
-            top: 100%;
-            right: 0;
-            /* FIXME */
-            background: white;
+            margin: 0;
         }
     }
 
     li {
         /* flex: 0 0 15vw; */
-        height: 20vw;
+        height: 150px;
         border-radius: var(--radius-2);
         overflow: hidden;
         /*display: inline-grid;
@@ -107,5 +103,24 @@ import type Show from 'domain/show/entity';
         margin-block: var(--size-4);
         /* FIXME */
         color: var(--gray-6);
+    }
+
+    .search-result {
+        padding: var(--layout-margin-inline);
+        box-sizing: border-box;
+
+        @media (min-width: 700px) {
+            padding: var(--layout-margin-inline);
+            position: absolute;
+            width: 100%;
+            max-height: 60vh;
+            overflow: auto;
+            top: 100%;
+            right: 0;
+            /* FIXME */
+            background: white;
+            box-shadow: var(--shadow-6);
+            border-radius: var(--radius-2);
+        }
     }
 </style>

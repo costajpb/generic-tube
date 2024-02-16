@@ -5,6 +5,8 @@ import UseCase from "../shared/use-case";
 export type Categories = Record<string, Show[]>
 
 export default class Dashboard extends UseCase<Show> {
+    readonly featured: string[] = ['Drama', 'Thriller', 'Crime', 'Adventure', 'Music']
+
     private categorize(shows: Show[]) {
         const categories: Categories = {}
         
@@ -18,7 +20,14 @@ export default class Dashboard extends UseCase<Show> {
             })
         })
 
-        return categories
+        return Object.keys(categories)
+            .filter(key => this.featured.includes(key))
+            .reduce((obj, key) => {
+                return {
+                    ...obj,
+                    [key]: categories[key]
+                };
+            }, {});
     }
 
     get categories(): Promise<Categories> {
