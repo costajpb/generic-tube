@@ -18,6 +18,10 @@
 </template>
 
 <style scoped>
+    * {
+        all: unset;
+    }
+
     header {
         background: linear-gradient(
             to right,

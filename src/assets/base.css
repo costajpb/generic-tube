@@ -7,8 +7,8 @@
   box-sizing: border-box;
 }
 
-body, body * {
-  all: initial;
+body {
+  all: unset;
   font-family: inherit;
 }
 
