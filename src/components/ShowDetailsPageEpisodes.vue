@@ -32,8 +32,11 @@
     }
 
     ol {
-        display: flex;
-        flex-direction: column;
+        display: grid;
+        /* FIXME: 300px */
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        /* display: flex;
+        flex-direction: column; */
         gap: var(--size-4);
         max-height: 60vh;
         overflow: auto;
