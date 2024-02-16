@@ -16,7 +16,7 @@ import type Show from 'domain/show/entity';
     <p v-show="!result.length">No shows found! :(</p>
 </template>
 
-<style scoped>
+<style scoped lang="postcss">
     * {
         all: unset;
     }
@@ -27,6 +27,11 @@ import type Show from 'domain/show/entity';
         width: 100%;
         height: 100%;
         text-align: center;
+
+        @media (min-width: 700px) {
+            position: static;
+            
+        }
     }
 
     img {
@@ -41,6 +46,9 @@ import type Show from 'domain/show/entity';
             transform: translate(-50%, -50%);
             /* FIXME */
             color: white;
+        }
+
+        @media (min-width: 700px) {
         }
     }
 
@@ -57,7 +65,7 @@ import type Show from 'domain/show/entity';
         /* border-radius: var(--radius-8); */
         /* padding: var(--size-1); */
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
         /* flex-direction: row;
         flex-wrap: wrap;
         align-items: stretch; */
@@ -65,10 +73,21 @@ import type Show from 'domain/show/entity';
         /* overflow: auto; */
         gap: var(--size-2);
         color: var(--branding-color-primary-200);
+
+        @media (min-width: 700px) {
+            position: absolute;
+            width: 100%;
+            max-height: 60vh;
+            overflow: auto;
+            top: 100%;
+            right: 0;
+            /* FIXME */
+            background: white;
+        }
     }
 
     li {
-        flex: 0 0 15vw;
+        /* flex: 0 0 15vw; */
         height: 20vw;
         border-radius: var(--radius-2);
         overflow: hidden;

@@ -57,6 +57,17 @@
         top: 0;
         display: flex;
         gap: var(--size-2);
+
+        @media (min-width: 700px) {
+            position: static;
+            display: block;
+        }
+    }
+    
+    a[href="#"] {
+        @media (min-width: 700px) {
+            display: none;
+        }
     }
 
     a[href="#"] span {
@@ -72,7 +83,7 @@
     }
 
     #search {
-        contain: paint;
+        /* contain: paint; */
         background: white;
         position: fixed;
         height: 100%;
@@ -89,11 +100,30 @@
         &:target {
             left: 0;
         }
+
+        @media (min-width: 700px) {
+            position: relative;
+            top: unset;
+            left: unset;
+            background: unset;
+            width: unset;
+            height: unset;
+            padding: unset;
+            overflow: visible;
+        }
     }
 
     input[type="search"] {
-        flex: 1 1 0
+        flex: 1 1 0;
         /* order: -1; */
+        transition: width ease-in-out 300ms;
+        width: 15em;
+
+        .container[data-is-active="true"] & {
+            @media (min-width: 700px) {
+                width: 100%
+            }
+        }
     }
 
 
