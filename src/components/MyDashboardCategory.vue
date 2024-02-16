@@ -19,7 +19,7 @@ import type Show from 'domain/show/entity';
 <template>
     <article>
         <h2>{{ props.name }}</h2>
-        <ol class="reset-list" @wheel.prevent="scrollHorizontally">
+        <ol @wheel.prevent="scrollHorizontally">
             <li v-for="show in props.shows" :key="show.id">
                 <a :href="'/shows/' + show.id" @click.prevent="useCase.display(show)">
                     <img :src="show.coverImage" :alt="show.title" />
@@ -30,6 +30,10 @@ import type Show from 'domain/show/entity';
 </template>
 
 <style scoped>
+    * {
+        all: unset;
+    }
+
     article {
         margin-inline: var(--layout-margin-inline);
     }
@@ -43,6 +47,10 @@ import type Show from 'domain/show/entity';
     ol {
         display: flex;
         overflow: auto;
+
+        &:empty:before {
+            content: 'No shows found!'
+        }
     }
 
     li {
@@ -57,6 +65,7 @@ import type Show from 'domain/show/entity';
         position: absolute;
         width: 100%;
         height: 100%;
+        cursor: pointer;
     }
 
     li + li {

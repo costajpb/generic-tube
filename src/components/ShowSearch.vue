@@ -37,25 +37,38 @@
 
     const transitionEnd = () => isTransitioning.value = false
 
-    const showResults = computed(() => !isTransitioning.value && isActive.value)
+    const showResults = computed(() => !isTransitioning.value && isActive.value && !isLoading.value)
 </script>
 <template>
     <ShowSearchTrigger anchor="search" />
     <section id="search" class="container" :data-is-active="isActive" v-click-outside="deactivate">
         <div class="actions">
-            <a href="#">Close</a>
+            <a href="#"><span>Close</span></a>
             <input @transitionstart="transitionStart" @transitionend="transitionEnd" @focus="activate" placeholder="Search shows..." type="search" @input="searchShows" />
         </div>
+        <p v-show="isLoading">Loading...</p>
         <MyDashboardSearchResult :result="result" v-if="result" v-show="showResults" />
     </section>
 </template>
 
-<style lang="postcss">
+<style lang="postcss" scoped>
     .actions {
         position: sticky;
         top: 0;
         display: flex;
         gap: var(--size-2);
+    }
+
+    a[href="#"] span {
+        display: none;
+    }
+
+    a[href="#"]:before {
+        content: url('/arrow-left.svg');
+        display: inline-block;
+        width: var(--font-size-2);
+        height: var(--font-size-2);
+        vertical-align: middle;
     }
 
     #search {

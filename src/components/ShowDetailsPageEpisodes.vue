@@ -8,7 +8,7 @@
 
 <template>
     <h2>Episodes</h2>
-    <ol class="reset-list">
+    <ol>
         <li v-for="episode in episodes" :key="episode.id">
             <article>
                 <header>
