@@ -1,12 +1,14 @@
 <script setup lang="ts">
-    const props = defineProps<{
-        isHome?: boolean
-    }>()
+    import { computed } from 'vue';
+    import { useRoute } from 'vue-router';
+
+    const route = useRoute()
+    const isHome = computed(() => route.path === '/')
 </script>
 
 <template>
     <header>
-        <component class="title" :is="props.isHome ? 'h1' : 'a'" :href="props.isHome ? undefined : '/'">
+        <component class="title" :is="isHome ? 'h1' : 'a'" :href="isHome ? undefined : '/'">
             ABN Amro Tube
         </component>
         <div class="extra">

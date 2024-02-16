@@ -1,14 +1,14 @@
 <script setup lang="ts">
     import { computed, inject, ref, type Ref } from 'vue';
-    import UseCase from '@/application/shared/use-case'
     import MyDashboardSearchResult from '@/src/components/MyDashboardSearchResult.vue'
     import type Show from '@/domain/show/entity';
     import debounce from '@/src/util/debounce';
     import ShowSearchTrigger from './ShowSearchTrigger.vue';
+    import SearchShows from '@/src/adapters/use-cases/search-shows';
     
     const isLoading = ref<boolean | undefined>(undefined)
     const result = ref<Show[] | undefined>(undefined)
-    const search = inject('search') as Ref<UseCase<Show>['search']>
+    const useCase = new SearchShows()
 
     const searchShows = (event: Event) => {
         const target = event.target as HTMLInputElement
@@ -19,7 +19,7 @@
             if (value.length > 2) {
                 isLoading.value = true
                 debounce(async () => {
-                    result.value = await search.value(target.value)
+                    result.value = await useCase.search(target.value)
                     isLoading.value = false
                 })
             }
@@ -59,6 +59,7 @@
     }
 
     #search {
+        contain: paint;
         background: white;
         position: fixed;
         height: 100%;

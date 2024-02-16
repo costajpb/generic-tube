@@ -1,11 +1,11 @@
 import UseCase from '@/application/dashboard'
 import Shows from '@/domain/show/repository'
 
-import Emitter from '@/src/util/emitter'
 import tvMazeAdapter from '../tv-maze'
+import mitt from 'mitt'
 
 export default class Dashboard extends UseCase {
-    constructor(container: HTMLElement) {
-        super(new Shows(tvMazeAdapter), new Emitter(container))
+    constructor() {
+        super(new Shows(tvMazeAdapter), mitt())
     }
 }

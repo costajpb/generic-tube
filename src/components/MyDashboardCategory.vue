@@ -1,5 +1,6 @@
 <script setup lang="ts">
-    import type Show from 'domain/show/entity';
+    import type Dashboard from '@/application/dashboard';
+import type Show from 'domain/show/entity';
     import { inject } from 'vue';
     
     const props = defineProps<{
@@ -7,7 +8,7 @@
         shows: Show[]
     }>()
 
-    const display = inject('display') as ((show: Show) => void | undefined)
+    const useCase = inject('useCase') as Dashboard
 
     const scrollHorizontally = (event: WheelEvent) => {
         const offset = event.deltaY;
@@ -20,7 +21,7 @@
         <h2>{{ props.name }}</h2>
         <ol class="reset-list" @wheel.prevent="scrollHorizontally">
             <li v-for="show in props.shows" :key="show.id">
-                <a :href="'/shows/' + show.id" @click.prevent="display(show)" v-if="display">
+                <a :href="'/shows/' + show.id" @click.prevent="useCase.display(show)">
                     <img :src="show.coverImage" :alt="show.title" />
                 </a>
             </li>

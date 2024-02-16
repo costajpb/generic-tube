@@ -6,33 +6,21 @@
     import MyDashboard from '@/src/components/MyDashboard.vue';
     import type Show from '@/domain/show/entity'
     import router from '@/src/router';
-    import PageLayout from '@/src/components/PageLayout.vue';
 
-    const container = ref<HTMLElement | null>(null)
     const categories = ref<Categories | undefined>(undefined)
-    const display = ref<Dashboard['display'] | undefined>(undefined)
-    provide('display', display)
+    const useCase = new Dashboard()
 
-    const search = ref<Dashboard['search'] | undefined>(undefined)
-    provide('search', search)
+    useCase.on('dashboard:display', (data) => {
+        router.push(`/shows/${(data as Show).id}`)
+    })
+
+    provide('useCase', useCase)
 
     onMounted(async () => {
-        const useCase = new Dashboard(container.value as HTMLElement)
         categories.value = await useCase.categories
-        display.value = useCase.display.bind(useCase)
-        search.value = useCase.search.bind(useCase)
-        
-        container.value?.addEventListener('dashboard:display', (event) => {
-            const show = (event as CustomEvent).detail as Show
-            router.push(`/shows/${show.id}`)
-        })
     })
 </script>
 
 <template>
-    <div ref="container">
-        <PageLayout :is-home="true">
-            <MyDashboard :categories="categories" v-if="categories" />
-        </PageLayout>
-    </div>
+    <MyDashboard :categories="categories" v-if="categories" />
 </template>

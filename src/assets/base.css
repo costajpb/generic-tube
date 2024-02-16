@@ -9,6 +9,7 @@
 
 body, body * {
   all: initial;
+  font-family: inherit;
 }
 
 a {
