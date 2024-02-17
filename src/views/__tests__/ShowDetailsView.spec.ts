@@ -1,6 +1,6 @@
 import router from "@/src/router"
 import { flushPromises, mount } from "@vue/test-utils"
-import ShowDetailsView from "../ShowDetailsView.vue"
+import ShowDetailsView from "@/src/views/ShowDetailsView.vue"
 import ShowDetails from '@/application/show-details'
 
 vi.mock('vue-router', async (importOriginal) => {

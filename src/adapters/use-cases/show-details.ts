@@ -1,7 +1,7 @@
 import UseCase from '@/application/show-details'
 import type Show from "@/domain/show/entity";
 import Shows from "@/domain/show/repository";
-import tvMazeAdapter from '../tv-maze';
+import tvMazeAdapter from '@/src/adapters/tv-maze';
 import mitt from 'mitt';
 
 export default class ShowDetails extends UseCase {

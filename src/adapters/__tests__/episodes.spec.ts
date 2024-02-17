@@ -1,4 +1,4 @@
-import isEpisodesResource from "../api/episodes"
+import isEpisodesResource from "@/src/adapters/api/episodes"
 
 describe('adapters/episode', () => {
     test('isEpisodesResource', () => {

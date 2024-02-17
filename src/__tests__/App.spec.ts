@@ -1,6 +1,6 @@
 import { flushPromises, mount } from '@vue/test-utils'
 import router from "@/src/router"
-import clickOutside from '../directives/click-outside'
+import clickOutside from '@/src/directives/click-outside'
 import App from '@/src/App.vue'
 
 const mocks = vi.hoisted(async () => ({

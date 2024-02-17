@@ -1,6 +1,6 @@
 import type Show from "@/domain/show/entity";
-import Shows from "../../domain/show/repository";
-import UseCase, { type Emitter } from "../shared/use-case";
+import Shows from "@/domain/show/repository";
+import UseCase, { type Emitter } from "@/application/shared/use-case";
 
 export type Categories = Record<string, Show[]>
 export type Featured = (keyof Categories)[]

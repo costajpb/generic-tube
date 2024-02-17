@@ -1,5 +1,5 @@
-import type Show from "../entity";
-import type Repository from '../../shared/repository'
+import type Show from "@/domain/show/entity";
+import type Repository from '@/domain/shared/repository'
 
 export default class Shows implements Repository<Show> {
     readonly baseUrl: string

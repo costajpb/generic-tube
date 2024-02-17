@@ -1,7 +1,6 @@
 import UseCase, { type Featured } from '@/application/dashboard'
 import Shows from '@/domain/show/repository'
-
-import tvMazeAdapter from '../tv-maze'
+import tvMazeAdapter from '@/src/adapters/tv-maze'
 import mitt from 'mitt'
 
 export default class Dashboard extends UseCase {

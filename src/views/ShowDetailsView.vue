@@ -4,7 +4,7 @@
     import { useRoute } from 'vue-router';
     import type Show from '@/domain/show/entity';
     import ShowDetailsPage from '@/src/components/ShowDetailsPage.vue';
-    import router from '../router';
+    import router from '@/src/router';
 
     const details = ref<Required<Pick<Show, 'episodes'>> & Show | undefined>(undefined)
     const route = useRoute()

@@ -1,5 +1,5 @@
 import { flushPromises, mount } from "@vue/test-utils"
-import DashboardView from '../DashboardView.vue'
+import DashboardView from '@/src/views/DashboardView.vue'
 import router from "@/src/router"
 import Dashboard from "@/application/dashboard"
 import clickOutside from "@/src/directives/click-outside"

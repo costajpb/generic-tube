@@ -12,7 +12,7 @@ const router = createRouter({
     {
       path: '/shows/:id',
       name: 'show-details',
-      component: () => import('../views/ShowDetailsView.vue')
+      component: () => import('@/src/views/ShowDetailsView.vue')
     }
   ]
 })
