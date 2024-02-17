@@ -1,6 +1,12 @@
-# abn-amro
+# 📽️ ABN Amro Tube 
 
 This template should help get you started developing with Vue 3 in Vite.
+
+## Requirements *
+- Node.js (v21.6.1)
+- npm (v10.2.4)
+
+\* A warning will be issued when installing the project in lower versions, but it might still work.
 
 ## Recommended IDE Setup
 
