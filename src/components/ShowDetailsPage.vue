@@ -1,6 +1,6 @@
 <script setup lang="ts">
     import type Show from '@/domain/show/entity';
-import ShowDetailsPageEpisodes from './ShowDetailsPageEpisodes.vue';
+    import ShowDetailsPageEpisodes from './ShowDetailsPageEpisodes.vue';
     
     defineProps<{
         details: Required<Pick<Show, 'episodes'>> & Show
@@ -8,11 +8,11 @@ import ShowDetailsPageEpisodes from './ShowDetailsPageEpisodes.vue';
 </script>
 
 <template>
-    <div class="container">
-        <div class="jumbotron">
-            <h1>{{ details.title }}</h1>
-            <img :src="details.coverImage" :alt="details.title" />
-            <dl>
+    <div :class="classes.container">
+        <div :class="classes.jumbotron">
+            <h1 :class="classes.title">{{ details.title }}</h1>
+            <img :class="classes.cover" :src="details.coverImage" :alt="details.title" />
+            <dl :class="classes.specs">
                 <dt>Genres:</dt>
                 <dd v-for="genre in details.genres" :key="genre">{{ genre }}</dd>
                 <dt>Type:</dt>
@@ -24,27 +24,17 @@ import ShowDetailsPageEpisodes from './ShowDetailsPageEpisodes.vue';
             </dl>
         </div>
         
-        <div class="content">
-            <div class="summary" v-html="details.summary"></div>
+        <div>
+            <div :class="classes.summary" v-html="details.summary"></div>
         
-            <div class="episodes">
+            <div :class="classes.episodes">
                 <ShowDetailsPageEpisodes :episodes="details.episodes" />
             </div>
         </div>
     </div>
-</template>
+</template>>
 
-<style module>
-    p {
-        margin: 0;
-    }
-</style>
-
-<style scoped lang="postcss">
-    * {
-        all: unset;
-    }
-
+<style module="classes" lang="postcss">
     .container {
         margin-inline: var(--layout-margin-inline);
         display: flex;
@@ -55,90 +45,19 @@ import ShowDetailsPageEpisodes from './ShowDetailsPageEpisodes.vue';
             margin-inline: 0;
             display: block;
         }
+
+        p {
+            margin: 0
+        }
     }
 
-    h1 {
+    .title {
         font-size: var(--font-size-4);
         margin-block: var(--size-2);
         display: block;
-        font-weight: var(--font-weight: 4);
-    }
+        font-weight: var(--font-weight-4);
 
-    img {
-        width: var(--size-11);
-        float: left;
-        margin-right: var(--size-2);
-    }
-
-    details {
-        background: var(--gray-2);
-    }
-
-    summary {
-        font-weight: var(--font-weight-6);
-        cursor: pointer;
-        display: block;
-        background: var(--gray-4);
-        padding: var(--size-1) var(--size-2);
-
-        &:before {
-            content: url('/arrow-left.svg');
-            display: inline-block;
-            width: var(--size-4);
-            vertical-align: text-bottom;
-            transform: rotate(180deg);
-            transition: transform ease 300ms;
-
-            details[open] & {
-                transform: rotate(270deg)
-            }
-        }
-    }
-
-    dl {
-        display: block;
-        padding: var(--size-1) var(--size-2);
-    }
-    
-    dt {
-        font-weight: var(--font-weight-6);
-        margin-right: var(--size-1);
-    }
-
-    dd {
-        & + dd {
-            &:before {
-                content: ", "
-            }
-        }
-
-        & + dt {
-            margin-top: var(--size-4);
-
-            &:before {
-                content: "\a";
-                white-space: pre;
-            }
-        }
-    }
-
-    @media (min-width: 700px) {
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: 50% 25%;
-        }
-        /* .container {
-            display: grid;
-            grid-template-areas:
-                "a a"
-                "b c"
-                "d d";
-            grid-template-columns: auto 300px;
-        } */
-
-        h1 {
+        @media (min-width: 700px) {
             grid-area: a;
             margin: 0;
             position: absolute;
@@ -147,12 +66,66 @@ import ShowDetailsPageEpisodes from './ShowDetailsPageEpisodes.vue';
             z-index: var(--layer-1);
             font-size: var(--font-size-fluid-3);
         }
+    }
 
-        .intro {
-            grid-area: b;
+    .cover {
+        width: var(--size-11);
+        float: left;
+        margin-right: var(--size-2);
+
+        @media (min-width: 700px) {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: 50% 25%;
+        }
+    }
+
+    .specs {
+        display: block;
+        padding: var(--size-1) var(--size-2);
+
+        dt {
+            display: inline;
+            font-weight: var(--font-weight-6);
+            margin-right: var(--size-1);
         }
 
-        .jumbotron {
+        dd {
+            display: inline;
+            margin: 0;
+
+            & + dd {
+                &:before {
+                    content: ", "
+                }
+            }
+
+            & + dt {
+                margin-top: var(--size-4);
+
+                &:before {
+                    content: "\a";
+                    white-space: pre;
+                }
+            }
+        }
+
+        @media (min-width: 700px) {
+            z-index: 1;
+            right: var(--layout-margin-inline);
+            bottom: var(--layout-margin-inline);
+            position: absolute;
+            text-align: right;
+            background: rgba(0,0,0,50%);
+            padding-block: var(--size-1);
+            padding-inline: var(--layout-margin-inline);
+            border-radius: var(--radius-2);
+        }
+    }
+
+    .jumbotron {
+        @media (min-width: 700px) {
             height: 30vw;
             position: relative;
             overflow: hidden;
@@ -165,29 +138,14 @@ import ShowDetailsPageEpisodes from './ShowDetailsPageEpisodes.vue';
                 transition: height ease 500ms;
             }
         }
+    }
 
-        .summary {
+    .summary {
+        @media (min-width: 700px) {
             padding-block: var(--size-8);
             padding-inline: var(--layout-margin-inline);
             max-width: 60ch;
             display: block;
-        }
-
-        /* details { */
-        dl {
-            /* grid-area: c;
-            align-self: baseline;
-
-            position: absolute; */
-            z-index: 1;
-            right: var(--layout-margin-inline);
-            bottom: var(--layout-margin-inline);
-            position: absolute;
-            text-align: right;
-            background: rgba(0,0,0,50%);
-            padding-block: var(--size-1);
-            padding-inline: var(--layout-margin-inline);
-            border-radius: var(--radius-2);
         }
     }
 </style>
