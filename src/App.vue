@@ -10,6 +10,3 @@
   </PageHeader>
   <RouterView />
 </template>
-
-<style>
-</style>

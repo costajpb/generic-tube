@@ -3,7 +3,7 @@
     import { type Categories } from '@/application/dashboard'
     import Dashboard from '@/src/adapters/use-cases/dashboard'
     import { onMounted, provide, ref } from 'vue';
-    import MyDashboard from '@/src/components/MyDashboard.vue';
+    import DashboardPage from '@/src/components/DashboardPage.vue';
     import type Show from '@/domain/show/entity'
     import router from '@/src/router';
 
@@ -22,5 +22,5 @@
 </script>
 
 <template>
-    <MyDashboard :categories="categories" v-if="categories" />
+    <DashboardPage :categories="categories" v-if="categories" />
 </template>
