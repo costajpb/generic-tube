@@ -15,9 +15,9 @@
 
 <style module="classes">
     .categories {
-        margin-block: var(--size-fluid-3);
+        margin-block: var(--layout-margin-block-default);
         display: flex;
         flex-direction: column;
-        gap: var(--size-fluid-3);
+        gap: var(--layout-margin-block-default);
     }
 </style>

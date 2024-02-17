@@ -7,62 +7,68 @@
 </script>
 
 <template>
-    <h2>Episodes</h2>
-    <ol>
+    <h2 :class="classes.title">Episodes</h2>
+    <ol :class="classes.episodes">
         <li v-for="episode in episodes" :key="episode.id">
-            <article>
-                <header>
-                    <h3>{{ episode.title }}</h3>
+            <article :class="classes.episode">
+                <header :class="classes['episode-header']">
+                    <h3 :class="classes['episode-title']">{{ episode.title }}</h3>
                     <p>{{ episode.duration }}m</p>
                 </header>
-                <img :src="episode.coverImage" :alt="episode.title" />
-                <div class="summary" v-html="episode.summary" />
+                <img :class="classes.cover" :src="episode.coverImage" :alt="episode.title" />
+                <div :class="classes.summary" v-html="episode.summary" />
             </article>
         </li>
     </ol>
 </template>
 
-<style scoped lang="postcss">
-    * {
-        all: unset;
-    }
-
-    a {
-        cursor: pointer;
-    }
-
-    h2 {
-        padding-inline: var(--layout-margin-inline);
+<style module="classes" lang="postcss">
+    .title {
+        padding-inline: var(--layout-margin-inline-default);
+        box-sizing: content-box;
+        position: relative;
+        left: calc(var(--layout-margin-inline-default) * -1);
+        width: 100%;
         display: block;
-        font-size: var(--font-size-5);
+        font-size: var(--font-size-h2);
         line-height: 2;
-        border-bottom: var(--border-size-2) var(--branding-color-primary-100) solid;
+        border-bottom: var(--border-size-2) var(--color-branding-primary-100) solid;
+        margin: 0;
+        font-weight: normal;
+
+        @media (min-width: 700px) {
+            box-sizing: border-box;
+            position: static;
+        }
     }
 
-    ol {
+    .episodes {
+        list-style: none;
         display: grid;
         /* FIXME: 300px */
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-        gap: var(--size-4);
+        gap: var(--layout-margin-block-default);
         max-height: 60vh;
         overflow: auto;
         background: var(--gray-0);
-        /* box-sizing: content-box; */
-        /* padding: var(--layout-margin-inline); */
-        /* margin-left: calc(var(--layout-margin-inline) * -1); */
         box-shadow: var(--inner-shadow-2);
-        padding: var(--layout-margin-inline);
+        padding: var(--layout-margin-inline-default);
+        margin: 0;
 
         @media (min-width: 700px) {
             max-height: none;
         }
     }
 
-    h3 {
-        font-size: var(--font-size-1)
+    .episode-title {
+        font-size: var(--font-size-1);
+        display: block;
+        font-weight: var(--font-weight-6);
+        font-size: var(--font-size-2);
+        color: var(--heading-color);
+        margin: 0;
     }
-
-    article {
+    .episode {
         display: grid;
         grid-template-areas:
             "e f"
@@ -82,22 +88,15 @@
         }
     }
 
-    img {
+    .cover {
         grid-area: e;
         width: 100%;
         height: 90%;
         object-fit: cover;
     }
 
-    header {
+    .episode-header {
         grid-area: f;
-    }
-
-    h3 {
-        display: block;
-        font-weight: var(--font-weight-6);
-        font-size: var(--font-size-2);
-        color: var(--heading-color);
     }
 
     .summary {

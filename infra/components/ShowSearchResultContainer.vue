@@ -6,11 +6,12 @@
 
 <style module="classes">
     .container {
-        padding: var(--layout-margin-inline);
-        box-sizing: border-box;
+        padding: var(--layout-margin-inline-default);
 
         @media (min-width: 700px) {
-            padding: var(--layout-margin-inline);
+            padding: var(--layout-margin-block-compact);
+            border: var(--border-size-3) solid var(--color-branding-primary-100);
+            border-radius: var(--radius-2);
             position: absolute;
             width: 100%;
             max-height: 60vh;

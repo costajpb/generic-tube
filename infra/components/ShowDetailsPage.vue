@@ -19,8 +19,6 @@
                 <dd>{{  details.type }}</dd>
                 <dt>Language:</dt>
                 <dd>{{ details.language }}</dd>
-                <dt>Website:</dt>
-                <dd>{{  details.website }}</dd>
             </dl>
         </div>
         
@@ -36,7 +34,7 @@
 
 <style module="classes" lang="postcss">
     .container {
-        margin-inline: var(--layout-margin-inline);
+        margin-inline: var(--layout-margin-inline-default);
         display: flex;
         flex-direction: column;
         gap: var(--size-2);
@@ -58,11 +56,11 @@
         font-weight: var(--font-weight-4);
 
         @media (min-width: 700px) {
-            grid-area: a;
             margin: 0;
             position: absolute;
-            top: var(--layout-margin-inline);
-            left: var(--layout-margin-inline);
+            top: var(--layout-margin-inline-default);
+            padding-inline: var(--layout-margin-inline-default);
+            background: rgba(0,0,0,50%);
             z-index: var(--layer-1);
             font-size: var(--font-size-fluid-3);
         }
@@ -113,13 +111,13 @@
 
         @media (min-width: 700px) {
             z-index: 1;
-            right: var(--layout-margin-inline);
-            bottom: var(--layout-margin-inline);
+            right: var(--layout-margin-inline-default);
+            bottom: var(--layout-margin-inline-default);
             position: absolute;
             text-align: right;
             background: rgba(0,0,0,50%);
             padding-block: var(--size-1);
-            padding-inline: var(--layout-margin-inline);
+            padding-inline: var(--layout-margin-inline-default);
             border-radius: var(--radius-2);
         }
     }
@@ -141,9 +139,12 @@
     }
 
     .summary {
+        margin-block: var(--layout-margin-block-default);
+
         @media (min-width: 700px) {
-            padding-block: var(--size-8);
-            padding-inline: var(--layout-margin-inline);
+            margin-block: 0;
+            padding-block: var(--layout-margin-block-loose);
+            padding-inline: var(--layout-margin-inline-default);
             max-width: 60ch;
             display: block;
         }

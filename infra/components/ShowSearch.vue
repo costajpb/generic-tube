@@ -61,7 +61,7 @@
         position: sticky;
         top: 0;
         display: flex;
-        gap: var(--size-2);
+        gap: var(--layout-margin-block-compact);
 
         @media (min-width: 700px) {
             position: static;
@@ -89,7 +89,7 @@
 
     .container {
         contain: paint;
-        background: white;
+        background: var(--color-text-default-on-muted);
         position: fixed;
         height: 100%;
         width: 100%;
@@ -100,13 +100,14 @@
         z-index: var(--layer-5);
         display: flex;
         flex-direction: column;
-        padding: var(--layout-margin-inline);
+        padding: var(--layout-margin-inline-default);
 
         &:target {
             left: 0;
         }
 
         @media (min-width: 700px) {
+            contain: unset;
             position: relative;
             top: unset;
             left: unset;
@@ -120,10 +121,10 @@
 
     .input {
         flex: 1 1 0;
-        /* order: -1; */
         transition: width ease-in-out 300ms;
         width: 15em;
         line-height: 2;
+        /* FIMXE: size this input properly */
 
         .container[data-is-active="true"] & {
             @media (min-width: 700px) {
@@ -131,4 +132,4 @@
             }
         }
     }
-</style>@/infra/util/debounce@/infra/adapters/use-cases/search-shows
+</style>

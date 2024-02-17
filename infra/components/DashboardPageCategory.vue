@@ -31,18 +31,20 @@
 
 <style module="classes" lang="postcss">
     .category {
-        margin-inline: var(--layout-margin-inline);
+        margin-inline: var(--layout-margin-inline-default);
     }
 
     .title {
-        font-size: var(--font-size-4);
-        color: var(--branding-color-primary-200);
-        margin-bottom: var(--size-fluid-1);
+        font-size: var(--font-size-h2);
+        color: var(--color-branding-primary-200);
+        margin: 0;
     }
 
     .shows {
         display: flex;
         overflow: auto;
+        margin: 0;
+        padding: 0;
     }
 
     .show {

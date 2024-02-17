@@ -17,11 +17,29 @@ a {
 }
 
 :root {
-  --branding-color-primary-100: #008479;
-  --branding-color-primary-200: #005f5e;
-  --branding-color-secondary: #f3c000;
-  --layout-margin-inline: var(--size-4);
-  --heading-color: var(--branding-color-primary-200)
+  /* colors */
+  --color-branding-primary-100: #008479;
+  --color-branding-primary-200: #005f5e;
+  --color-branding-secondary: #f3c000;
+  --color-text-default-on-brand: white;
+  --color-text-default-on-muted: white;
+
+  /* layout */
+  --layout-margin-inline-default: var(--size-4);
+  --layout-margin-block-default: var(--size-4);
+  --layout-margin-block-compact: var(--size-2);
+  --layout-margin-block-loose: var(--size-6);
+
+  /* font-sizes */
+  --font-size-app: var(--font-size-4);
+  --font-size-h1: var(--size-fluid-8);
+  --font-size-h2: var(--size-fluid-3);
+
+  /* font-weight */
+  --font-weight-bold: var(--font-weight-9);
+
+  /* line-height */
+  --line-height-1: var(--font-line-height-1);
 }
 
 html {

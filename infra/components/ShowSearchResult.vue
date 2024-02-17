@@ -46,8 +46,9 @@
     }
 
     .shows {
+        padding: 0;
+        margin: 0;
         text-align: initial;
-        margin-block: var(--size-4);
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
         gap: var(--size-2);
@@ -59,6 +60,7 @@
     }
 
     .show {
+        padding: 0;
         height: 150px;
         border-radius: var(--radius-2);
         overflow: hidden;
