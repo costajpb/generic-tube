@@ -5,16 +5,11 @@
 </script>
 
 <template>
-    <a :href="'#' + anchor">Search</a>
+    <a :class="classes.trigger" :href="'#' + anchor">Search</a>
 </template>
 
-<style lang="postcss" scoped>
-    * {
-        all: unset
-    }
-
-    a {
-        cursor: pointer;
+<style lang="postcss" module="classes">
+    .trigger {
         text-indent: 100vw;
         overflow: hidden;
         position: relative;
@@ -25,15 +20,20 @@
         background: white;
         border-radius: var(--radius-round);
         vertical-align: middle;
-    }
 
-    a::before {
-        content: "🔍";
-        font-size: var(--font-size-2);
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        text-indent: 0;
+        &::before {
+            content: "🔍";
+            font-size: var(--font-size-2);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-indent: 0;
+        }
+
+        /* FIXME: use custom media */
+        @media (min-width: 700px) {
+            display: none
+        }
     }
 </style>

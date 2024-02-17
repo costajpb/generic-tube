@@ -1,13 +1,15 @@
 <script setup lang="ts">
     import { computed, ref } from 'vue';
-    import MyDashboardSearchResult from '@/src/components/MyDashboardSearchResult.vue'
+    import ShowSearchResult from '@/src/components/ShowSearchResult.vue'
     import type Show from '@/domain/show/entity';
     import debounce from '@/src/util/debounce';
     import ShowSearchTrigger from './ShowSearchTrigger.vue';
     import SearchShows from '@/src/adapters/use-cases/search-shows';
+    import ShowSearchResultContainer from './ShowSearchResultContainer.vue';
+    import ShowSearchResultSkeleton from './ShowSearchResultSkeleton.vue';
     
-    const isLoading = ref<boolean | undefined>(undefined)
     const result = ref<Show[] | undefined>(undefined)
+    const isLoading = ref(false)
     const useCase = new SearchShows()
 
     const searchShows = (event: Event) => {
@@ -18,6 +20,7 @@
             if (!value.length) return result.value = undefined
             if (value.length > 2) {
                 isLoading.value = true
+                result.value = undefined
                 debounce(async () => {
                     result.value = await useCase.search(target.value)
                     isLoading.value = false
@@ -37,21 +40,23 @@
 
     const transitionEnd = () => isTransitioning.value = false
 
-    const showResults = computed(() => !isTransitioning.value && isActive.value && !isLoading.value)
+    const showContainer = computed(() => !isTransitioning.value && isActive.value && (result.value || isLoading.value))
 </script>
 <template>
     <ShowSearchTrigger anchor="search" />
-    <section id="search" class="container" :data-is-active="isActive" v-click-outside="deactivate">
-        <div class="actions">
-            <a href="#"><span>Close</span></a>
-            <input @transitionstart="transitionStart" @transitionend="transitionEnd" @focus="activate" placeholder="Search shows..." type="search" @input="searchShows" />
+    <section id="search" :class="classes.container" :data-is-active="isActive" v-click-outside="deactivate">
+        <div :class="classes.actions">
+            <a :class="classes.close" href="#"><span>Close</span></a>
+            <input :class="classes.input" @transitionstart="transitionStart" @transitionend="transitionEnd" @focus="activate" placeholder="Search shows..." type="search" @input="searchShows" />
         </div>
-        <p v-show="isLoading">Loading...</p>
-        <MyDashboardSearchResult :result="result" v-if="result" v-show="showResults" />
+        <ShowSearchResultContainer v-show="showContainer">
+            <ShowSearchResult :result="result" v-if="result" />
+            <ShowSearchResultSkeleton v-show="isLoading" />
+        </ShowSearchResultContainer>
     </section>
 </template>
 
-<style lang="postcss" scoped>
+<style lang="postcss" module="classes">
     .actions {
         position: sticky;
         top: 0;
@@ -64,26 +69,26 @@
         }
     }
     
-    a[href="#"] {
+    .close {
+        span {
+            display: none;
+        }
+
+        &:before {
+            content: url('/arrow-left.svg');
+            display: inline-block;
+            width: var(--font-size-2);
+            height: var(--font-size-2);
+            vertical-align: middle;
+        }
+
         @media (min-width: 700px) {
             display: none;
         }
     }
 
-    a[href="#"] span {
-        display: none;
-    }
-
-    a[href="#"]:before {
-        content: url('/arrow-left.svg');
-        display: inline-block;
-        width: var(--font-size-2);
-        height: var(--font-size-2);
-        vertical-align: middle;
-    }
-
-    #search {
-        /* contain: paint; */
+    .container {
+        contain: paint;
         background: white;
         position: fixed;
         height: 100%;
@@ -113,7 +118,7 @@
         }
     }
 
-    input[type="search"] {
+    .input {
         flex: 1 1 0;
         /* order: -1; */
         transition: width ease-in-out 300ms;
@@ -124,14 +129,6 @@
             @media (min-width: 700px) {
                 width: 100%
             }
-        }
-    }
-
-
-    /* FIXME: use custom media */
-    @media (min-width: 700px) {
-        a[href="#search"] {
-            display: none
         }
     }
 </style>
