@@ -1,0 +1,49 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`infra/components/show-details-page-episodes > should render 1`] = `
+<div
+  data-v-app=""
+>
+  
+  <h2
+    class="_title_37b976"
+  >
+    Episodes
+  </h2>
+  <ol
+    class="_episodes_37b976"
+  >
+    
+    <li>
+      <article
+        class="_episode_37b976"
+      >
+        <header
+          class="_episode-header_37b976"
+        >
+          <h3
+            class="_episode-title_37b976"
+          >
+            Episode title
+          </h3>
+          <p>
+            56m
+          </p>
+        </header>
+        <img
+          alt="Episode title"
+          class="_cover_37b976"
+          src="image"
+        />
+        <div
+          class="_summary_37b976"
+        >
+          Episode summary
+        </div>
+      </article>
+    </li>
+    
+  </ol>
+  
+</div>
+`;
