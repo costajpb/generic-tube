@@ -1,10 +1,10 @@
 <script setup lang="ts">
     import { onMounted, provide, ref } from 'vue';
-    import ShowDetails from '@/src/adapters/use-cases/show-details'
+    import ShowDetails from '@/infra/adapters/use-cases/show-details'
     import { useRoute } from 'vue-router';
     import type Show from '@/domain/show/entity';
-    import ShowDetailsPage from '@/src/components/ShowDetailsPage.vue';
-    import router from '@/src/router';
+    import ShowDetailsPage from '@/infra/components/ShowDetailsPage.vue';
+    import router from '@/infra/router';
 
     const details = ref<Required<Pick<Show, 'episodes'>> & Show | undefined>(undefined)
     const route = useRoute()
@@ -23,4 +23,4 @@
 
 <template>
     <ShowDetailsPage :details="details" v-if="details" />
-</template>
+</template>@/infra/adapters/use-cases/show-details@/infra/router

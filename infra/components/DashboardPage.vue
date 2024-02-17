@@ -1,6 +1,6 @@
 <script setup lang="ts">
     import type { Categories } from 'application/dashboard';
-    import DashboardPageCategory from '@/src/components/DashboardPageCategory.vue';
+    import DashboardPageCategory from '@/infra/components/DashboardPageCategory.vue';
 
     defineProps<{
         categories: Categories

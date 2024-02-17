@@ -1,7 +1,7 @@
 import { flushPromises, mount } from '@vue/test-utils'
-import router from "@/src/router"
-import clickOutside from '@/src/directives/click-outside'
-import App from '@/src/App.vue'
+import router from "@/infra/router"
+import clickOutside from '@/infra/directives/click-outside'
+import App from '@/infra/App.vue'
 
 const mocks = vi.hoisted(async () => ({
     UseCase: await vi.importActual('@/application/shared/use-case'),
@@ -21,7 +21,7 @@ vi.mock('@/application/shared/use-case', async () => {
     }
 })
 
-vi.mock('@/src/util/debounce', () => ({
+vi.mock('@/infra/util/debounce', () => ({
     default: (fn: () => void) => {
         fn()
     }

@@ -1,10 +1,10 @@
 <script setup lang="ts">
     import { computed, ref } from 'vue';
-    import ShowSearchResult from '@/src/components/ShowSearchResult.vue'
+    import ShowSearchResult from '@/infra/components/ShowSearchResult.vue'
     import type Show from '@/domain/show/entity';
-    import debounce from '@/src/util/debounce';
+    import debounce from '@/infra/util/debounce';
     import ShowSearchTrigger from './ShowSearchTrigger.vue';
-    import SearchShows from '@/src/adapters/use-cases/search-shows';
+    import SearchShows from '@/infra/adapters/use-cases/search-shows';
     import ShowSearchResultContainer from './ShowSearchResultContainer.vue';
     import ShowSearchResultSkeleton from './ShowSearchResultSkeleton.vue';
     
@@ -131,4 +131,4 @@
             }
         }
     }
-</style>
+</style>@/infra/util/debounce@/infra/adapters/use-cases/search-shows

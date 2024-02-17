@@ -1,8 +1,8 @@
 import { flushPromises, mount } from "@vue/test-utils"
-import DashboardView from '@/src/views/DashboardView.vue'
-import router from "@/src/router"
+import DashboardView from '@/infra/views/DashboardView.vue'
+import router from "@/infra/router"
 import Dashboard from "@/application/dashboard"
-import clickOutside from "@/src/directives/click-outside"
+import clickOutside from "@/infra/directives/click-outside"
 
 function mountWithDirective(component: any) {
     return mount(component, {

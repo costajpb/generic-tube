@@ -2,7 +2,7 @@
   "extends": "@vue/tsconfig/tsconfig.dom.json",
   "include": ["env.d.ts", "./**/*", "./**/*.vue"],
   "exclude": [
-    "src/**/__tests__/*",
+    "infra/**/__tests__/*",
   ],
   "compilerOptions": {
     "baseUrl": ".",

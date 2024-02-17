@@ -82,8 +82,8 @@
     }
 
     .specs {
+        margin: 0;
         display: block;
-        padding: var(--size-1) var(--size-2);
 
         dt {
             display: inline;

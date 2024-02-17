@@ -1,4 +1,4 @@
-import debounce from "@/src/util/debounce"
+import debounce from "@/infra/util/debounce"
 
 describe('util/debounce', () => {
     beforeEach(() => {

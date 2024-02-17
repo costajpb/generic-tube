@@ -1,6 +1,6 @@
 import { DOMWrapper, flushPromises, mount } from "@vue/test-utils"
-import ShowSearch from "@/src/components/ShowSearch.vue"
-import clickOutside from "@/src/directives/click-outside"
+import ShowSearch from "@/infra/components/ShowSearch.vue"
+import clickOutside from "@/infra/directives/click-outside"
 
 describe('components/show-search', () => {
     let wrapper: ReturnType<typeof mount>

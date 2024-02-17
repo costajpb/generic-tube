@@ -1,5 +1,5 @@
 import UseCase from "@/application/shared/use-case";
-import tvMazeAdapter from "@/src/adapters/tv-maze";
+import tvMazeAdapter from "@/infra/adapters/tv-maze";
 import Shows from "@/domain/show/repository";
 import mitt from "mitt";
 

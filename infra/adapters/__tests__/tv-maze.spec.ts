@@ -1,6 +1,6 @@
 import type Show from "@/domain/show/entity"
-import type { show } from "@/src/adapters/api/shows"
-import tvMazeAdapter from "@/src/adapters/tv-maze"
+import type { show } from "@/infra/adapters/api/shows"
+import tvMazeAdapter from "@/infra/adapters/tv-maze"
 
 describe('adapters/tv-maze', () => {
     const data: show = {
