@@ -1,11 +1,17 @@
 import type Show from "@/domain/show/entity";
 import Shows from "../../domain/show/repository";
-import UseCase from "../shared/use-case";
+import UseCase, { type Emitter } from "../shared/use-case";
 
 export type Categories = Record<string, Show[]>
+export type Featured = (keyof Categories)[]
 
-export default class Dashboard extends UseCase<Show> {
-    readonly featured: string[] = ['Drama', 'Thriller', 'Crime', 'Adventure', 'Music']
+export default class Dashboard extends UseCase {
+    readonly featured: Featured
+
+    constructor(featured: Featured, repository: Shows, emitter: Emitter) {
+        super(repository, emitter)
+        this.featured = featured
+    }
 
     private categorize(shows: Show[]) {
         const categories: Categories = {}

@@ -1,14 +1,17 @@
 import { DOMWrapper, flushPromises, mount } from "@vue/test-utils"
-import MyDashboardSearch from "../MyDashboardSearch.vue"
+import ShowSearch from "@/src/components/ShowSearch.vue"
+import clickOutside from "@/src/directives/click-outside"
 
-describe('components/my-dashboard-search', () => {
+describe('components/show-search', () => {
     let wrapper: ReturnType<typeof mount>
     let input: DOMWrapper<Element>
 
     beforeEach(() => {
-        wrapper = mount(MyDashboardSearch, {
-            props: {
-                action: () => Promise.resolve([])
+        wrapper = mount(ShowSearch, {
+            global: {
+                directives: {
+                    'click-outside': clickOutside
+                }
             }
         })
 

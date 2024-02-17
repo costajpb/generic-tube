@@ -24,36 +24,12 @@ describe('DashboardView', () => {
         vi.spyOn(Dashboard.prototype, 'categories', 'get').mockResolvedValue({})
         const push = vi.spyOn(router, 'push')
         const wrapper = mountWithDirective(DashboardView)
-        const detail = {id: 1}
+        const show = {id: 1}
 
-        await flushPromises()
+        await flushPromises();
 
-        wrapper.trigger('dashboard:display', {
-            detail
-        })
+        (wrapper.vm as any).useCase.emit('dashboard:display', show)
 
-        expect(push).toHaveBeenCalledWith(`/shows/${detail.id}`)
-    })
-
-    it('should allow searching shows with debounce', async () => {
-        vi.useFakeTimers()
-        const search = vi.spyOn(Dashboard.prototype, 'search').mockImplementation(() => [])
-        const wrapper = mountWithDirective(DashboardView)
-
-        await flushPromises()
-        
-        const input = wrapper.find('[type=search]');
-
-        const query = 'query';
-
-        (input.element as HTMLInputElement).value = query
-        
-        input.trigger('input')
-
-        vi.runAllTimers()
-
-        expect(search).toHaveBeenCalledWith(query)
-
-        vi.useRealTimers()
+        expect(push).toHaveBeenCalledWith(`/shows/${show.id}`)
     })
 })

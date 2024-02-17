@@ -1,11 +1,11 @@
-import UseCase from '@/application/dashboard'
+import UseCase, { type Featured } from '@/application/dashboard'
 import Shows from '@/domain/show/repository'
 
 import tvMazeAdapter from '../tv-maze'
 import mitt from 'mitt'
 
 export default class Dashboard extends UseCase {
-    constructor() {
-        super(new Shows(tvMazeAdapter), mitt())
+    constructor(featured: Featured) {
+        super(featured, new Shows(tvMazeAdapter), mitt())
     }
 }

@@ -1,5 +1,6 @@
 import type Show from "@/domain/show/entity"
 import ShowDetails from "."
+import { EventEmitter } from "stream"
 
 describe('application/show-details', () => {
     test('display show details', async () => {
@@ -7,14 +8,18 @@ describe('application/show-details', () => {
             id: 1,
             title: 'Dummy show',
             coverImage: 'cover-image',
-            genres: ['Drama']
+            genres: ['Drama'],
+            summary: 'Summary 1',
+            type: 'Documentary',
+            language: 'English',
+            website: 'dummy-website-1'
         }
         
         const repository = {
             find: () => Promise.resolve(show)
         }
 
-        const useCase = new ShowDetails(show.id, repository as any)
+        const useCase = new ShowDetails(show.id, repository as any, new EventEmitter)
         expect(await useCase.details).toStrictEqual(show)
     })
 
@@ -24,7 +29,7 @@ describe('application/show-details', () => {
             find: () => Promise.resolve({})
         }
 
-        const useCase = new ShowDetails(1, repository as any)
+        const useCase = new ShowDetails(1, repository as any, new EventEmitter)
 
         useCase.on('showDetails:return', () => {
             spy()

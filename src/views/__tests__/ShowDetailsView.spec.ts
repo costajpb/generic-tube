@@ -20,14 +20,19 @@ describe('ShowDetailsView', () => {
         vi.spyOn(ShowDetails.prototype, 'details', 'get').mockResolvedValue({
             id: 1,
             title: 'Title',
-            genres: []
+            genres: [],
+            summary: 'Summary',
+            type: 'Type',
+            language: 'Language',
+            website: 'website',
+            episodes: []
         })
         const push = vi.spyOn(router, 'push')
         const wrapper = mount(ShowDetailsView)
 
-        await flushPromises()
+        await flushPromises();
         
-        wrapper.trigger('showDetails:return')
+        (wrapper.vm as any).useCase.emit('showDetails:return')
 
         expect(push).toHaveBeenCalledWith('/')
     })

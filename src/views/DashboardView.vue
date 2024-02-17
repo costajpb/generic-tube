@@ -8,10 +8,10 @@
     import router from '@/src/router';
 
     const categories = ref<Categories | undefined>(undefined)
-    const useCase = new Dashboard()
+    const useCase = new Dashboard(['Drama', 'Thriller', 'Crime', 'Adventure','Music'])
 
-    useCase.on('dashboard:display', (data) => {
-        router.push(`/shows/${(data as Show).id}`)
+    useCase.on('dashboard:display', (show: Show) => {
+        router.push(`/shows/${show.id}`)
     })
 
     provide('useCase', useCase)

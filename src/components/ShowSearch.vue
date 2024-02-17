@@ -12,7 +12,7 @@
 
     const searchShows = (event: Event) => {
         const target = event.target as HTMLInputElement
-
+        
         (async () => {
             const value = target.value
             if (!value.length) return result.value = undefined
