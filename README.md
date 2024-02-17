@@ -5,6 +5,7 @@ A Vue.js-based application to browse TV shows from http://www.tvmaze.com/api .
 ## Requirements *
 - Node.js (v21.6.1)
 - npm (v10.2.4)
+- An active internet connection (for data)
 
 \* A warning will be issued when installing the project in lower versions, but it might still work.
 
@@ -41,12 +42,14 @@ The codebase is thoroughly unit-tested as TDD was adopted in order to develop th
 
 ### Domain-Driven Development (DDD)
 One may pull the "Over-engineering" card on layering out the business logic of the view components. However, even the simplest of the front-end projects may benefit from DDD:
-- By establishing one single possible (transitive) dependency chain (`infrastructure` depends on `application`, and `application` on `domain`), layers can be individually tested based on inputs and outputs. For instance, there is no risk of messing up core businees logic while working on a view component.
+- By establishing one single possible (transitive) dependency chain (`infrastructure` (`infra`) depends on `application`, and `application` on `domain`), layers can be individually tested based on inputs and outputs. For instance, there is no risk of messing up core businees logic while working on a view component.
 - [The consumed API](https://www.tvmaze.com/api) lives under another jurisdiction, hence its integrity cannot be guaranteed. Therefore, an [anti-corruption layer](https://learn.microsoft.com/en-us/azure/architecture/patterns/anti-corruption-layer) is necessary to ensure internal consistency. With that, there is no doubt that a "show" will always be a [`Show`](./domain/show/entity.ts) within this architecture.
 
 Other than that, one major advantage of this approach should be to retain functionality over major refactors and technology shifts. And that's not to say moving away from Vue.js. The framework is already in it's third version, there might be more to come, and transitioning can be less of a headache with DDD. While keeping things agnostic closer to the domain, the changes in the view layer can be carried out more easily.
 
-Of course, plumbing code is entailed when such a route is taken. For example, procedural navigation is enforced to cope with navigation events, which means that the `router-link` component can't be used as such. However, this is no subversion of Vue.js best practices, as they rely heavily on event handling and Vue Router already packs a procedural navigation solution.
+Of course, plumbing code is entailed when such a route is taken. For example, procedural navigation is enforced to cope with navigation events, which means that the `router-link` component can't be used as such.
+
+A major shortcoming from that is that the `push` method from the router for procedural navigtaion forces a full page reload, which seems bad but might not be a deal-breaker at the end of the day, given the aforementioned reasons. Neither should this be looked at as a subversion of best practices as Vue.js itself heavily relies on event handling.
 
 ### Typescript
 It's true that Vue.js allows no-build applications, meaning that Typescript is no hard requirement strictly speaking. However, the `domain` layer, for instance, is mostly about some types and interfaces, which would be unattainable without Typescript. Additionally, Typescript can settle an agreement layer between developers, which is much need especially in large projects and is probably why ABN Amro has it as a requirement for the vacancy this project is meant for.
@@ -56,14 +59,16 @@ Although a mighty solution like [Tailwind](https://tailwindcss.com/) would proba
 
 Based on that, [Open Props](https://open-props.style/) were adopted to somehow fill in for a missing UX designer or Design System. The option of [PostCSS](https://postcss.org/) for the CSS flavor is just enough to allow incremental addition of features to make working with _quasi_-vanilla CSS "bearable". For example, it allows the use of CSS nesting today, even though [it's still a working draft.](https://caniuse.com/css-nesting)
 
+### No dedicated state management system
+A dedicated state management system, although usual in this kind of application, has purposefully been left out of the equation as it has nothing that the intrinsic reactive system of Vue.JS can't handle. 
+
+Were it a requirement, though, the search component could potentially benefit from it, as it has a relatively complex behavior compared to the others. [Pinia](https://pinia.vuejs.org/) should be the system to adopt as not only is it maintained by those who maintain Vue.js, but also it's oddly intuitive.
 
 ### Vue.js style guide
 If there was anything to bias the design decisions made in this project, that would be the naming conventions and the preconized folder structure by the [official Vue.js style guide](https://vuejs.org/style-guide/). I tried to follow such practices as close as possible in order to ease whoever Vue.js developer into this project.
 
-However, I can't help but express that I mostly disagree with said practices. They are usually situational and tend to ignore best practices of software development in general.
+Or I have done so only inside the infrastructure (`infra`) folder, where everything Vue.js lives. I can't help but point out that some of those alleged best practices are usually situational and tend to ignore best practices of software engineering in general.
 
 For example, some claims based on IDE browsing fall flat for command-line-based environments and diffing mechanisms. Having test files separated from the files they are meant to test not only adds steps to test-driven development, but also renders module management error prone. Think of when a file is renamed/moved/deleted but its counterpart test file is left behind. 
-
-Lastly, I would like to tell a related episode that actually happened to myself to give my own claims some grounding. I once checked a file with the wrong casing in the version control system. Later on, I changed the file and renamed it accordingly, but the server was case-insensitive and refused to serve the right version. It's true that the style guide acknowledges this scenario, but in my humble opinion it should not be prescriptive about it in the first place.
 
 All in all, this style guide might work for someone trying their hand at Vue.js, but from experience I would suggest a team to swear by their own thoroughly crafted conventions and agreements.
