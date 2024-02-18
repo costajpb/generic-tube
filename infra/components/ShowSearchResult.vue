@@ -1,5 +1,7 @@
 <script setup lang="ts">
     import type Show from 'domain/show/entity'
+    import ShowSearchResultGrid from './ShowSearchResultGrid.vue';
+    import BaseSkeleton from './BaseSkeleton.vue';
 
     defineProps<{
         result: Show[]
@@ -7,13 +9,13 @@
 </script>
 
 <template>
-    <ol :class="classes.shows" v-show="result && result.length">
-        <li :class="classes.show" v-for="show in result" :key="show.id">
+    <ShowSearchResultGrid v-show="result && result.length">
+        <BaseSkeleton tagName="li" v-for="show in result" :key="show.id">
             <a :class="classes.anchor" :href="'/shows/' + show.id">
                 <img :class="classes.cover" :src="show.coverImage" :title="show.title" :alt="show.title" />
             </a>
-        </li>
-    </ol>
+        </BaseSkeleton>
+    </ShowSearchResultGrid>
     <p :class="classes['no-results']" v-show="!result.length">No shows found! :(</p>
 </template>
 
@@ -23,6 +25,8 @@
         width: 100%;
         height: 100%;
         text-align: center;
+        top: 0;
+        left: 0;
 
         @media (min-width: 700px) {
             position: static;
@@ -43,30 +47,6 @@
             /* FIXME */
             color: white;
         }
-    }
-
-    .shows {
-        padding: 0;
-        margin: 0;
-        text-align: initial;
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-        gap: var(--size-2);
-        color: var(--branding-color-primary-200);
-
-        @media (min-width: 700px) {
-            margin: 0;
-        }
-    }
-
-    .show {
-        padding: 0;
-        height: 150px;
-        border-radius: var(--radius-2);
-        overflow: hidden;
-        position: relative;
-        /* FIXME */
-        background-color: gray;
     }
 
     .no-results {

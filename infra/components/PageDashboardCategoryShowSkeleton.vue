@@ -17,10 +17,6 @@
         position: relative;
         overflow: hidden;
 
-        & + & {
-            margin-left: var(--size-2);
-        }
-
         @media (min-width: 700px) {
             --_width: 200px;
             --_height: 267px;

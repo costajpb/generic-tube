@@ -2,7 +2,7 @@
     import type Dashboard from '@/application/dashboard';
     import type Show from '@/domain/show/entity';
     import { inject } from 'vue';
-    import ShowSkeleton from '@/infra/components/ShowSkeleton.vue';
+    import PageDashboardCategoryShowSkeleton from '@/infra/components/PageDashboardCategoryShowSkeleton.vue';
     
     const props = defineProps<{
         name: string,
@@ -21,11 +21,11 @@
     <article :class="classes.category">
         <h2 :class="classes.title">{{ props.name }}</h2>
         <ol :class="classes.shows" @wheel.prevent="scrollHorizontally">
-            <ShowSkeleton v-for="show in props.shows" :key="show.id">
+            <PageDashboardCategoryShowSkeleton v-for="show in props.shows" :key="show.id">
                 <a :class="classes.anchor" :href="'/shows/' + show.id" @click.prevent="useCase.display(show)">
                     <img :class="classes.cover" :src="show.coverImage" :alt="show.title" />
                 </a>
-            </ShowSkeleton>
+            </PageDashboardCategoryShowSkeleton>
         </ol>
     </article>
 </template>
@@ -43,6 +43,10 @@
         margin: 0;
         padding: 0;
         list-style: none;
+
+        > * + * {
+            margin-left: var(--size-2);
+        }
     }
 
     .anchor {
@@ -50,18 +54,6 @@
         width: 100%;
         height: 100%;
     }
-
-    /* .show {
-        flex: 0 0 15vw;
-        height: 20vw;
-        border-radius: var(--radius-2);
-        position: relative;
-        overflow: hidden;
-
-        & + & {
-            margin-left: var(--size-fluid-1)
-        }
-    } */
 
     .cover {
         object-fit: cover;

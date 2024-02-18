@@ -53,52 +53,54 @@ exports[`App > should render 1`] = `
           
           <!--v-if-->
           <ol
-            class="_grid_bd911a"
+            class="_grid_f639ee"
             style="display: none;"
           >
             
+            
             <li
-              class="_wrapper_587f33 _item_bd911a"
+              class="_wrapper_587f33"
             >
               
               
             </li>
             <li
-              class="_wrapper_587f33 _item_bd911a"
+              class="_wrapper_587f33"
             >
               
               
             </li>
             <li
-              class="_wrapper_587f33 _item_bd911a"
+              class="_wrapper_587f33"
             >
               
               
             </li>
             <li
-              class="_wrapper_587f33 _item_bd911a"
+              class="_wrapper_587f33"
             >
               
               
             </li>
             <li
-              class="_wrapper_587f33 _item_bd911a"
+              class="_wrapper_587f33"
             >
               
               
             </li>
             <li
-              class="_wrapper_587f33 _item_bd911a"
+              class="_wrapper_587f33"
             >
               
               
             </li>
             <li
-              class="_wrapper_587f33 _item_bd911a"
+              class="_wrapper_587f33"
             >
               
               
             </li>
+            
             
           </ol>
           
