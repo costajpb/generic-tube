@@ -1,7 +1,7 @@
 <script setup lang="ts">
     import type Show from '@/domain/show/entity';
-    import ShowDetailsPageEpisodes from '@/infra/components/ShowDetailsPageEpisodes.vue';
-    import ShowDetailsPageSkeleton from '@/infra/components/ShowDetailsPageSkeleton.vue';
+    import PageDetailsEpisodes from '@/infra/components/PageDetailsEpisodes.vue';
+    import PageDetailsSkeleton from '@/infra/components/PageDetailsSkeleton.vue';
     import { ref, watchEffect } from 'vue';
     
     const resolved = ref<Required<Pick<Show, 'episodes'>> & Show | undefined>(undefined)
@@ -16,7 +16,7 @@
 </script>
 
 <template>
-    <ShowDetailsPageSkeleton v-if="!resolved" />
+    <PageDetailsSkeleton v-if="!resolved" />
     <div :class="classes.container" v-if="resolved">
         <div :class="classes.jumbotron">
             <h1 :class="classes.title">{{ resolved.title }}</h1>
@@ -35,7 +35,7 @@
             <div :class="classes.summary" v-html="resolved.summary"></div>
         
             <div :class="classes.episodes">
-                <ShowDetailsPageEpisodes :episodes="resolved.episodes" />
+                <PageDetailsEpisodes :episodes="resolved.episodes" />
             </div>
         </div>
     </div>

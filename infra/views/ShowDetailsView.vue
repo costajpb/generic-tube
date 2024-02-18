@@ -1,9 +1,8 @@
 <script setup lang="ts">
-    import { onMounted, provide, ref } from 'vue';
+    import { provide } from 'vue';
     import ShowDetails from '@/infra/adapters/use-cases/show-details'
     import { useRoute } from 'vue-router';
-    import type Show from '@/domain/show/entity';
-    import ShowDetailsPage from '@/infra/components/ShowDetailsPage.vue';
+    import PageDetails from '@/infra/components/PageDetails.vue';
     import router from '@/infra/router';
 
     const route = useRoute()
@@ -18,5 +17,5 @@
 </script>
 
 <template>
-    <ShowDetailsPage :details="details" v-if="details" />
+    <PageDetails :details="details" v-if="details" />
 </template>
