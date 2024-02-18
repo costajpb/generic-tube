@@ -1,5 +1,9 @@
+<script setup lang="ẗs"></script>
+
 <template>
-    <div :class="classes.skeleton"></div>
+    <div :class="classes.wrapper">
+        <slot></slot>
+    </div>
 </template>
 
 <style module="classes" lang="postcss">
@@ -13,7 +17,7 @@
         }
     }
 
-    .skeleton {
+    .wrapper {
         border-radius: var(--radius-2);
         animation: gradient 1500ms infinite linear;
         background: linear-gradient(90deg, var(--gray-3) 0px, var(--gray-2) 40px, var(--gray-3) 80px);

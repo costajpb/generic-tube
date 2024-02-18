@@ -8,105 +8,177 @@ exports[`DashboardView > should render properly 1`] = `
     
     <div>
       <div
-        class="_skeleton_587f33 _name_9b2e19"
-      />
+        class="_wrapper_587f33 _name_9b2e19"
+      >
+        
+        
+      </div>
       <ol
         class="_list_9b2e19"
       >
         
         <div
-          class="_skeleton_587f33 _show_9b2e19"
-        />
+          class="_wrapper_587f33 _show_9b2e19"
+        >
+          
+          
+        </div>
         <div
-          class="_skeleton_587f33 _show_9b2e19"
-        />
+          class="_wrapper_587f33 _show_9b2e19"
+        >
+          
+          
+        </div>
         <div
-          class="_skeleton_587f33 _show_9b2e19"
-        />
+          class="_wrapper_587f33 _show_9b2e19"
+        >
+          
+          
+        </div>
         <div
-          class="_skeleton_587f33 _show_9b2e19"
-        />
+          class="_wrapper_587f33 _show_9b2e19"
+        >
+          
+          
+        </div>
         <div
-          class="_skeleton_587f33 _show_9b2e19"
-        />
+          class="_wrapper_587f33 _show_9b2e19"
+        >
+          
+          
+        </div>
         
       </ol>
     </div>
     <div>
       <div
-        class="_skeleton_587f33 _name_9b2e19"
-      />
+        class="_wrapper_587f33 _name_9b2e19"
+      >
+        
+        
+      </div>
       <ol
         class="_list_9b2e19"
       >
         
         <div
-          class="_skeleton_587f33 _show_9b2e19"
-        />
+          class="_wrapper_587f33 _show_9b2e19"
+        >
+          
+          
+        </div>
         <div
-          class="_skeleton_587f33 _show_9b2e19"
-        />
+          class="_wrapper_587f33 _show_9b2e19"
+        >
+          
+          
+        </div>
         <div
-          class="_skeleton_587f33 _show_9b2e19"
-        />
+          class="_wrapper_587f33 _show_9b2e19"
+        >
+          
+          
+        </div>
         <div
-          class="_skeleton_587f33 _show_9b2e19"
-        />
+          class="_wrapper_587f33 _show_9b2e19"
+        >
+          
+          
+        </div>
         <div
-          class="_skeleton_587f33 _show_9b2e19"
-        />
+          class="_wrapper_587f33 _show_9b2e19"
+        >
+          
+          
+        </div>
         
       </ol>
     </div>
     <div>
       <div
-        class="_skeleton_587f33 _name_9b2e19"
-      />
+        class="_wrapper_587f33 _name_9b2e19"
+      >
+        
+        
+      </div>
       <ol
         class="_list_9b2e19"
       >
         
         <div
-          class="_skeleton_587f33 _show_9b2e19"
-        />
+          class="_wrapper_587f33 _show_9b2e19"
+        >
+          
+          
+        </div>
         <div
-          class="_skeleton_587f33 _show_9b2e19"
-        />
+          class="_wrapper_587f33 _show_9b2e19"
+        >
+          
+          
+        </div>
         <div
-          class="_skeleton_587f33 _show_9b2e19"
-        />
+          class="_wrapper_587f33 _show_9b2e19"
+        >
+          
+          
+        </div>
         <div
-          class="_skeleton_587f33 _show_9b2e19"
-        />
+          class="_wrapper_587f33 _show_9b2e19"
+        >
+          
+          
+        </div>
         <div
-          class="_skeleton_587f33 _show_9b2e19"
-        />
+          class="_wrapper_587f33 _show_9b2e19"
+        >
+          
+          
+        </div>
         
       </ol>
     </div>
     <div>
       <div
-        class="_skeleton_587f33 _name_9b2e19"
-      />
+        class="_wrapper_587f33 _name_9b2e19"
+      >
+        
+        
+      </div>
       <ol
         class="_list_9b2e19"
       >
         
         <div
-          class="_skeleton_587f33 _show_9b2e19"
-        />
+          class="_wrapper_587f33 _show_9b2e19"
+        >
+          
+          
+        </div>
         <div
-          class="_skeleton_587f33 _show_9b2e19"
-        />
+          class="_wrapper_587f33 _show_9b2e19"
+        >
+          
+          
+        </div>
         <div
-          class="_skeleton_587f33 _show_9b2e19"
-        />
+          class="_wrapper_587f33 _show_9b2e19"
+        >
+          
+          
+        </div>
         <div
-          class="_skeleton_587f33 _show_9b2e19"
-        />
+          class="_wrapper_587f33 _show_9b2e19"
+        >
+          
+          
+        </div>
         <div
-          class="_skeleton_587f33 _show_9b2e19"
-        />
+          class="_wrapper_587f33 _show_9b2e19"
+        >
+          
+          
+        </div>
         
       </ol>
     </div>

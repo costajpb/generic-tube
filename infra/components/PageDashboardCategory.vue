@@ -2,7 +2,7 @@
     import type Dashboard from '@/application/dashboard';
     import type Show from '@/domain/show/entity';
     import { inject } from 'vue';
-    import SkeletonShow from '@/infra/components/SkeletonShow.vue'
+    import ShowSkeleton from '@/infra/components/ShowSkeleton.vue';
     
     const props = defineProps<{
         name: string,
@@ -21,11 +21,11 @@
     <article :class="classes.category">
         <h2 :class="classes.title">{{ props.name }}</h2>
         <ol :class="classes.shows" @wheel.prevent="scrollHorizontally">
-            <SkeletonShow v-for="show in props.shows" :key="show.id">
+            <ShowSkeleton v-for="show in props.shows" :key="show.id">
                 <a :class="classes.anchor" :href="'/shows/' + show.id" @click.prevent="useCase.display(show)">
                     <img :class="classes.cover" :src="show.coverImage" :alt="show.title" />
                 </a>
-            </SkeletonShow>
+            </ShowSkeleton>
         </ol>
     </article>
 </template>

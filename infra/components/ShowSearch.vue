@@ -1,5 +1,5 @@
 <script setup lang="ts">
-    import { computed, ref, watchEffect } from 'vue';
+    import { computed, ref } from 'vue';
     import ShowSearchResult from '@/infra/components/ShowSearchResult.vue'
     import type Show from '@/domain/show/entity';
     import debounce from '@/infra/util/debounce';
