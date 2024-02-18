@@ -1,32 +1,41 @@
 <script setup lang="ts">
     import type Show from '@/domain/show/entity';
-    import ShowDetailsPageEpisodes from './ShowDetailsPageEpisodes.vue';
+    import ShowDetailsPageEpisodes from '@/infra/components/ShowDetailsPageEpisodes.vue';
+    import ShowDetailsPageSkeleton from '@/infra/components/ShowDetailsPageSkeleton.vue';
+    import { ref, watchEffect } from 'vue';
     
-    defineProps<{
-        details: Required<Pick<Show, 'episodes'>> & Show
+    const resolved = ref<Required<Pick<Show, 'episodes'>> & Show | undefined>(undefined)
+
+    const props = defineProps<{
+        details: Promise<Required<Pick<Show, 'episodes'>> & Show>
     }>()
+
+    watchEffect(async () => {
+        resolved.value = await props.details
+    })
 </script>
 
 <template>
-    <div :class="classes.container">
+    <ShowDetailsPageSkeleton v-if="!resolved" />
+    <div :class="classes.container" v-if="resolved">
         <div :class="classes.jumbotron">
-            <h1 :class="classes.title">{{ details.title }}</h1>
-            <img :class="classes.cover" :src="details.coverImage" :alt="details.title" />
+            <h1 :class="classes.title">{{ resolved.title }}</h1>
+            <img :class="classes.cover" :src="resolved.coverImage" :alt="resolved.title" />
             <dl :class="classes.specs">
                 <dt>Genres:</dt>
-                <dd v-for="genre in details.genres" :key="genre">{{ genre }}</dd>
+                <dd v-for="genre in resolved.genres" :key="genre">{{ genre }}</dd>
                 <dt>Type:</dt>
-                <dd>{{  details.type }}</dd>
+                <dd>{{  resolved.type }}</dd>
                 <dt>Language:</dt>
-                <dd>{{ details.language }}</dd>
+                <dd>{{ resolved.language }}</dd>
             </dl>
         </div>
         
         <div>
-            <div :class="classes.summary" v-html="details.summary"></div>
+            <div :class="classes.summary" v-html="resolved.summary"></div>
         
             <div :class="classes.episodes">
-                <ShowDetailsPageEpisodes :episodes="details.episodes" />
+                <ShowDetailsPageEpisodes :episodes="resolved.episodes" />
             </div>
         </div>
     </div>

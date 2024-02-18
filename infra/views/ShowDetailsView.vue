@@ -6,21 +6,17 @@
     import ShowDetailsPage from '@/infra/components/ShowDetailsPage.vue';
     import router from '@/infra/router';
 
-    const details = ref<Required<Pick<Show, 'episodes'>> & Show | undefined>(undefined)
     const route = useRoute()
     const useCase = new ShowDetails(parseInt(route.params.id as string))
+    const details = useCase.details
     
     useCase.on('showDetails:return', () => {
         router.push('/')
     })
     
     provide('useCase', useCase)
-
-    onMounted(async () => {
-        details.value = (await useCase.details) as Required<Pick<Show, 'episodes'>> & Show
-    })
 </script>
 
 <template>
     <ShowDetailsPage :details="details" v-if="details" />
-</template>@/infra/adapters/use-cases/show-details@/infra/router
+</template>
