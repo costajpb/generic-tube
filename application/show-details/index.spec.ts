@@ -11,8 +11,7 @@ describe('application/show-details', () => {
             genres: ['Drama'],
             summary: 'Summary 1',
             type: 'Documentary',
-            language: 'English',
-            website: 'dummy-website-1'
+            language: 'English'
         }
         
         const repository = {

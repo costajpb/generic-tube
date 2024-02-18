@@ -12,8 +12,7 @@ describe('domain/show/repository', () => {
                 coverImage: '',
                 summary: 'Summary 1',
                 type: 'Animation',
-                language: 'English',
-                website: 'dummy-website-1'
+                language: 'English'
             },
             {
                 id: 2,
@@ -22,8 +21,7 @@ describe('domain/show/repository', () => {
                 coverImage: '',
                 summary: 'Summary 2',
                 type: 'Documentary',
-                language: 'Japanese',
-                website: 'dummy-website-2'
+                language: 'Japanese'
             },
             {
                 id: 3,
@@ -32,8 +30,7 @@ describe('domain/show/repository', () => {
                 coverImage: '',
                 summary: 'Summary 3',
                 type: 'Documentary',
-                language: 'English',
-                website: 'dummy-website-3'
+                language: 'English'
             },
             {
                 id: 4,
@@ -42,8 +39,7 @@ describe('domain/show/repository', () => {
                 coverImage: '',
                 summary: 'Summary 4',
                 type: 'Animation',
-                language: 'German',
-                website: 'dummy-website-4'
+                language: 'German'
             }
         ]
 
@@ -71,8 +67,7 @@ describe('domain/show/repository', () => {
                 coverImage: 'https://static.tvmaze.com/uploads/images/original_untouched/60/151357.jpg',
                 summary: 'Summary 1',
                 type: 'Animation',
-                language: 'English',
-                website: 'dummy-website-1'
+                language: 'English'
             },
             {
                 id: 26437,
@@ -81,8 +76,7 @@ describe('domain/show/repository', () => {
                 coverImage: 'https://static.tvmaze.com/uploads/images/original_untouched/104/260281.jpg',
                 summary: 'Summary 2',
                 type: 'Animation',
-                language: 'English',
-                website: 'dummy-website-2'
+                language: 'English'
             }
         ]
         

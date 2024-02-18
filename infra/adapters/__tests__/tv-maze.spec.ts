@@ -12,8 +12,7 @@ describe('adapters/tv-maze', () => {
         },
         summary: 'summary',
         type: 'type',
-        language: 'language',
-        officialSite: 'website'
+        language: 'language'
     }
 
     it('should adapt a single show resource', () => {
@@ -26,8 +25,7 @@ describe('adapters/tv-maze', () => {
             coverImage: data.image?.original,
             summary: data.summary,
             type: data.type,
-            language: data.language,
-            website: data.officialSite
+            language: data.language
         }
 
         expect(actual).toEqual(expected)
@@ -73,8 +71,7 @@ describe('adapters/tv-maze', () => {
                 coverImage: data.image?.original,
                 summary: data.summary,
                 type: data.type,
-                language: data.language,
-                website: data.officialSite
+                language: data.language
             }
         ]
 
@@ -98,8 +95,7 @@ describe('adapters/tv-maze', () => {
             coverImage: data.image?.original,
             summary: data.summary,
             type: data.type,
-            language: data.language,
-            website: data.officialSite
+            language: data.language
         }]
 
         expect(actual).toEqual(expected)

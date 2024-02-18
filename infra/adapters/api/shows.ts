@@ -14,7 +14,6 @@ export type show = {
     },
     type: string
     language: string
-    officialSite: string
 }
 
 export default function isShowResource(data: unknown): data is show {
@@ -27,5 +26,4 @@ export default function isShowResource(data: unknown): data is show {
         && (!('_embedded' in data) || (!!data._embedded && typeof data._embedded === 'object' && 'episodes' in data._embedded && isEpisodesResource(data._embedded.episodes)))
         && 'type' in data
         && 'language' in data
-        && 'officialSite' in data
 }

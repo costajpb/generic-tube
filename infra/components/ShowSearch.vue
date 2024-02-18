@@ -104,7 +104,7 @@
 
     .container {
         contain: paint;
-        background: var(--color-text-default-on-muted);
+        background: white;
         position: fixed;
         height: 100%;
         width: 100%;

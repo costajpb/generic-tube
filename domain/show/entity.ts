@@ -9,7 +9,6 @@ export default interface Show extends Entity {
     episodes?: Episode[]
     type: string
     language: string
-    website: string
 }
 
 export type ShowWithEpisodes = Required<Pick<Show, 'episodes'>> & Show

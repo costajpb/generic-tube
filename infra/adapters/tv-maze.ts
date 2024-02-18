@@ -34,7 +34,6 @@ function adaptSingleResource(data: unknown): Show {
         summary: resource.summary,
         type: resource.type,
         language: resource.language,
-        website: resource.officialSite,
         episodes: resource._embedded?.episodes.map(episode => ({
             id: parseInt(`${episode.id}`),
             title: episode.name,

@@ -29,7 +29,6 @@ describe('ShowDetailsView', () => {
             summary: 'Summary',
             type: 'Type',
             language: 'Language',
-            website: 'website',
             episodes: []
         })
         const push = vi.spyOn(router, 'push')

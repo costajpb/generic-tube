@@ -22,7 +22,6 @@ a {
   --color-branding-primary-200: #005f5e;
   --color-branding-secondary: #f3c000;
   --color-text-default-on-brand: white;
-  --color-text-default-on-muted: white;
 
   /* layout */
   --layout-margin-inline-default: var(--size-4);
