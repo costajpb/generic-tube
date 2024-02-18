@@ -31,6 +31,7 @@ describe('components/show-search', () => {
 
     await flushPromises()
 
+    expect((wrapper.vm as any).isLoading).toBe(false)
     expect((wrapper.vm as any).result).toBe(undefined)
   })
 
@@ -44,6 +45,7 @@ describe('components/show-search', () => {
     ;(input.element as HTMLInputElement).value = ''
     input.trigger('input')
 
+    expect((wrapper.vm as any).isLoading).toBe(false)
     expect((wrapper.vm as any).result).toBe(undefined)
   })
 
