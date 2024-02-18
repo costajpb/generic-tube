@@ -3,6 +3,14 @@ import PageDashboardCategory from "../PageDashboardCategory.vue"
 
 describe('infra/components/PageDashboardCategory', () => {
     it('should render', () => {
-        expect(snapshowWrapper(PageDashboardCategory)).toMatchSnapshot()
+        expect(snapshowWrapper(PageDashboardCategory, {}, {
+            name: 'Category',
+            shows: []
+        },
+        {
+            useCase: {
+                display: () => {}
+            }
+        })).toMatchSnapshot()
     })
 })

@@ -3,6 +3,13 @@ import PageDashboardCategoryShowSkeleton from "../PageDashboardCategoryShowSkele
 
 describe('infra/components/PageDashboardCategoryShowSkeleton', () => {
     it('should render', () => {
-        expect(snapshowWrapper(PageDashboardCategoryShowSkeleton)).toMatchSnapshot()
+        expect(snapshowWrapper(PageDashboardCategoryShowSkeleton, {}, {
+            name: 'Category',
+            shows: []
+        }, {
+            useCase: {
+                display: () => {}
+            }
+        })).toMatchSnapshot()
     })
 })

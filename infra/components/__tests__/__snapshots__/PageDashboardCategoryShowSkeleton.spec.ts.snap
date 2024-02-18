@@ -3,6 +3,8 @@
 exports[`infra/components/PageDashboardCategoryShowSkeleton > should render 1`] = `
 <li
   class="_wrapper_587f33 _skeleton_bdd73e"
+  name="Category"
+  shows=""
 >
   
   

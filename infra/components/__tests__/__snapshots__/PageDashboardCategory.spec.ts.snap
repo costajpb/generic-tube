@@ -6,7 +6,9 @@ exports[`infra/components/PageDashboardCategory > should render 1`] = `
 >
   <h2
     class="_title_77e56f"
-  />
+  >
+    Category
+  </h2>
   <ol
     class="_shows_77e56f"
   >
