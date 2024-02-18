@@ -55,9 +55,15 @@
         box-shadow: var(--inner-shadow-2);
         padding: var(--layout-margin-inline-default);
         margin: 0;
+        box-sizing: content-box;
+        position: relative;
+        left: calc(var(--layout-margin-inline-default) * -1);
+        width: 100%;
 
         @media (min-width: 700px) {
             max-height: none;
+            position: static;
+            box-sizing: border-box;
         }
     }
 
@@ -98,6 +104,7 @@
         width: 100%;
         height: 90%;
         object-fit: cover;
+        font-style: italic;
     }
 
     .episode-header {
