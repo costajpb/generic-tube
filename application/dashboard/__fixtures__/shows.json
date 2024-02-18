@@ -1,23 +1,22 @@
 [
-
-        {
-            "id": 1,
-            "title": "Title 1",
-            "genres": ["Drama", "Action"]
-        },
-        {
-            "id": 2,
-            "title": "Title 2",
-            "genres": ["Drama", "Adventure"]
-        },
-        {
-            "id": 3,
-            "title": "Title 3",
-            "genres": ["Adventure"]
-        },
-        {
-            "id": 4,
-            "title": "Title 4",
-            "genres": ["Adventure"]
-        }
-    ]
+  {
+    "id": 1,
+    "title": "Title 1",
+    "genres": ["Drama", "Action"]
+  },
+  {
+    "id": 2,
+    "title": "Title 2",
+    "genres": ["Drama", "Adventure"]
+  },
+  {
+    "id": 3,
+    "title": "Title 3",
+    "genres": ["Adventure"]
+  },
+  {
+    "id": 4,
+    "title": "Title 4",
+    "genres": ["Adventure"]
+  }
+]

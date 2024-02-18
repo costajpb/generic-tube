@@ -1,19 +1,19 @@
-import isEpisodesResource from "@/infra/adapters/api/episodes"
+import isEpisodesResource from '@/infra/adapters/api/episodes'
 
 describe('adapters/episode', () => {
-    test('isEpisodesResource', () => {
-        const data = [
-            {
-                id: 1,
-                name: 'episode',
-                image: {
-                    original: 'original-image'
-                },
-                summary: 'summary',
-                runtime: 56
-            }
-        ]
+  test('isEpisodesResource', () => {
+    const data = [
+      {
+        id: 1,
+        name: 'episode',
+        image: {
+          original: 'original-image'
+        },
+        summary: 'summary',
+        runtime: 56
+      }
+    ]
 
-        expect(isEpisodesResource(data)).toBeTruthy()
-    })
+    expect(isEpisodesResource(data)).toBeTruthy()
+  })
 })

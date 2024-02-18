@@ -4,7 +4,7 @@ import tvMazeAdapter from '@/infra/adapters/tv-maze'
 import mitt from 'mitt'
 
 export default class Dashboard extends UseCase {
-    constructor(featured: Featured) {
-        super(featured, new Shows(tvMazeAdapter), mitt())
-    }
+  constructor(featured: Featured) {
+    super(featured, new Shows(tvMazeAdapter), mitt())
+  }
 }
