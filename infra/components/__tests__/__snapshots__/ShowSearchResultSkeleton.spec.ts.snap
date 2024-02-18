@@ -1,0 +1,54 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`infra/components/ShowSearchResultSkeleton > should render 1`] = `
+<ol
+  class="_grid_f639ee"
+>
+  
+  
+  <li
+    class="_wrapper_587f33"
+  >
+    
+    
+  </li>
+  <li
+    class="_wrapper_587f33"
+  >
+    
+    
+  </li>
+  <li
+    class="_wrapper_587f33"
+  >
+    
+    
+  </li>
+  <li
+    class="_wrapper_587f33"
+  >
+    
+    
+  </li>
+  <li
+    class="_wrapper_587f33"
+  >
+    
+    
+  </li>
+  <li
+    class="_wrapper_587f33"
+  >
+    
+    
+  </li>
+  <li
+    class="_wrapper_587f33"
+  >
+    
+    
+  </li>
+  
+  
+</ol>
+`;

@@ -1,0 +1,19 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`infra/components/LayoutHeader > should render 1`] = `
+<header
+  class="_container_6cc6f3"
+>
+  <h1
+    class="_title_6cc6f3"
+  >
+     ABN Amro Tube 
+  </h1>
+  <div
+    class="_extra_6cc6f3"
+  >
+    
+    
+  </div>
+</header>
+`;

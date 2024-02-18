@@ -1,0 +1,189 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`infra/components/PageDashboard > should render 1`] = `
+<div>
+  <div
+    class="_categories_8ae98e"
+  >
+    
+    <div>
+      <div
+        class="_wrapper_587f33 _name_9b2e19"
+      >
+        
+        
+      </div>
+      <ol
+        class="_list_9b2e19"
+      >
+        
+        <div
+          class="_wrapper_587f33 _show_9b2e19"
+        >
+          
+          
+        </div>
+        <div
+          class="_wrapper_587f33 _show_9b2e19"
+        >
+          
+          
+        </div>
+        <div
+          class="_wrapper_587f33 _show_9b2e19"
+        >
+          
+          
+        </div>
+        <div
+          class="_wrapper_587f33 _show_9b2e19"
+        >
+          
+          
+        </div>
+        <div
+          class="_wrapper_587f33 _show_9b2e19"
+        >
+          
+          
+        </div>
+        
+      </ol>
+    </div>
+    <div>
+      <div
+        class="_wrapper_587f33 _name_9b2e19"
+      >
+        
+        
+      </div>
+      <ol
+        class="_list_9b2e19"
+      >
+        
+        <div
+          class="_wrapper_587f33 _show_9b2e19"
+        >
+          
+          
+        </div>
+        <div
+          class="_wrapper_587f33 _show_9b2e19"
+        >
+          
+          
+        </div>
+        <div
+          class="_wrapper_587f33 _show_9b2e19"
+        >
+          
+          
+        </div>
+        <div
+          class="_wrapper_587f33 _show_9b2e19"
+        >
+          
+          
+        </div>
+        <div
+          class="_wrapper_587f33 _show_9b2e19"
+        >
+          
+          
+        </div>
+        
+      </ol>
+    </div>
+    <div>
+      <div
+        class="_wrapper_587f33 _name_9b2e19"
+      >
+        
+        
+      </div>
+      <ol
+        class="_list_9b2e19"
+      >
+        
+        <div
+          class="_wrapper_587f33 _show_9b2e19"
+        >
+          
+          
+        </div>
+        <div
+          class="_wrapper_587f33 _show_9b2e19"
+        >
+          
+          
+        </div>
+        <div
+          class="_wrapper_587f33 _show_9b2e19"
+        >
+          
+          
+        </div>
+        <div
+          class="_wrapper_587f33 _show_9b2e19"
+        >
+          
+          
+        </div>
+        <div
+          class="_wrapper_587f33 _show_9b2e19"
+        >
+          
+          
+        </div>
+        
+      </ol>
+    </div>
+    <div>
+      <div
+        class="_wrapper_587f33 _name_9b2e19"
+      >
+        
+        
+      </div>
+      <ol
+        class="_list_9b2e19"
+      >
+        
+        <div
+          class="_wrapper_587f33 _show_9b2e19"
+        >
+          
+          
+        </div>
+        <div
+          class="_wrapper_587f33 _show_9b2e19"
+        >
+          
+          
+        </div>
+        <div
+          class="_wrapper_587f33 _show_9b2e19"
+        >
+          
+          
+        </div>
+        <div
+          class="_wrapper_587f33 _show_9b2e19"
+        >
+          
+          
+        </div>
+        <div
+          class="_wrapper_587f33 _show_9b2e19"
+        >
+          
+          
+        </div>
+        
+      </ol>
+    </div>
+    
+  </div>
+  <!--v-if-->
+</div>
+`;

@@ -1,0 +1,10 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`infra/components/ShowSearchTrigger > should render 1`] = `
+<a
+  class="_trigger_22e8e9"
+  href="#undefined"
+>
+  Search
+</a>
+`;

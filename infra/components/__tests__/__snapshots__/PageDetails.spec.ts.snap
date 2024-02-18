@@ -1,0 +1,31 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`infra/components/PageDetails > should render 1`] = `
+<div
+  data-v-app=""
+>
+  
+  <div
+    class="_container_9b1f4b"
+  >
+    <div>
+      <div
+        class="_wrapper_587f33 _title_9b1f4b"
+      >
+        
+        
+      </div>
+    </div>
+    <div>
+      <div
+        class="_wrapper_587f33 _content_9b1f4b"
+      >
+        
+        
+      </div>
+    </div>
+  </div>
+  <!--v-if-->
+  
+</div>
+`;

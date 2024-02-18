@@ -1,0 +1,10 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`infra/components/ShowSearchResultContainer > should render 1`] = `
+<div
+  class="_container_ea0614"
+>
+  
+  
+</div>
+`;

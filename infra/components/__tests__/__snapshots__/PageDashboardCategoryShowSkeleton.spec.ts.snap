@@ -1,0 +1,10 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`infra/components/PageDashboardCategoryShowSkeleton > should render 1`] = `
+<li
+  class="_wrapper_587f33 _skeleton_bdd73e"
+>
+  
+  
+</li>
+`;

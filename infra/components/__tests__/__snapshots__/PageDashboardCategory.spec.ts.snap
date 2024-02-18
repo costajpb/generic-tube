@@ -1,0 +1,17 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`infra/components/PageDashboardCategory > should render 1`] = `
+<article
+  class="_category_77e56f"
+>
+  <h2
+    class="_title_77e56f"
+  />
+  <ol
+    class="_shows_77e56f"
+  >
+    
+    
+  </ol>
+</article>
+`;

@@ -1,0 +1,41 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`infra/components/ShowSearchResult > should render 1`] = `
+<div
+  data-v-app=""
+>
+  
+  <ol
+    class="_grid_f639ee"
+  >
+    
+    
+    <li
+      class="_wrapper_587f33"
+    >
+      
+      <a
+        class="_anchor_a1e223"
+        href="/shows/1"
+      >
+        <img
+          alt="Show title"
+          class="_cover_a1e223"
+          src="image"
+          title="Show title"
+        />
+      </a>
+      
+    </li>
+    
+    
+  </ol>
+  <p
+    class="_no-results_a1e223"
+    style="display: none;"
+  >
+    No shows found! :(
+  </p>
+  
+</div>
+`;

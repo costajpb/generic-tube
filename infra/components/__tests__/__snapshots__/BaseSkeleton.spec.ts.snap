@@ -1,0 +1,10 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`infra/components/BaseSkeleton > should render 1`] = `
+<div
+  class="_wrapper_587f33"
+>
+  
+  
+</div>
+`;
