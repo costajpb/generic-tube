@@ -17,6 +17,19 @@ function mountWithDirective(component: any) {
 
 describe('DashboardView', () => {
     it('should render properly', () => {
+        vi.spyOn(Dashboard.prototype, 'categories', 'get').mockResolvedValue({
+            'Drama': [
+                {
+                    id: 1,
+                    title: 'Drama',
+                    genres: ['Drama'],
+                    coverImage: 'image',
+                    summary: 'summary',
+                    type: 'Scripted',
+                    language: 'English'
+                }
+            ]
+        })
         expect(snapshowWrapper(DashboardView)).toMatchSnapshot()
     })
 

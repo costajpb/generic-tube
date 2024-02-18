@@ -18,6 +18,15 @@ vi.mock('vue-router', async (importOriginal) => {
 
 describe('ShowDetailsView', () => {
     it('should render', () => {
+        vi.spyOn(ShowDetails.prototype, 'details', 'get').mockResolvedValue({
+            id: 1,
+            title: 'Title',
+            genres: [],
+            summary: 'Summary',
+            type: 'Type',
+            language: 'Language',
+            episodes: []
+        })
         expect(snapshowWrapper(ShowDetailsView)).toMatchSnapshot()
     })
 
