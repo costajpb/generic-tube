@@ -1,3 +1,177 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`DashboardView > should render properly 1`] = `<!--v-if-->`;
+exports[`DashboardView > should render properly 1`] = `
+<div>
+  <div
+    class="_categories_e6e1ae"
+  >
+    
+    <div>
+      <span
+        class="_skeleton_26f4a9"
+      />
+      <ol
+        class="_list_437aec"
+      >
+        
+        <li
+          class="_skeleton_2b95f1"
+        >
+          
+          
+        </li>
+        <li
+          class="_skeleton_2b95f1"
+        >
+          
+          
+        </li>
+        <li
+          class="_skeleton_2b95f1"
+        >
+          
+          
+        </li>
+        <li
+          class="_skeleton_2b95f1"
+        >
+          
+          
+        </li>
+        <li
+          class="_skeleton_2b95f1"
+        >
+          
+          
+        </li>
+        
+      </ol>
+    </div>
+    <div>
+      <span
+        class="_skeleton_26f4a9"
+      />
+      <ol
+        class="_list_437aec"
+      >
+        
+        <li
+          class="_skeleton_2b95f1"
+        >
+          
+          
+        </li>
+        <li
+          class="_skeleton_2b95f1"
+        >
+          
+          
+        </li>
+        <li
+          class="_skeleton_2b95f1"
+        >
+          
+          
+        </li>
+        <li
+          class="_skeleton_2b95f1"
+        >
+          
+          
+        </li>
+        <li
+          class="_skeleton_2b95f1"
+        >
+          
+          
+        </li>
+        
+      </ol>
+    </div>
+    <div>
+      <span
+        class="_skeleton_26f4a9"
+      />
+      <ol
+        class="_list_437aec"
+      >
+        
+        <li
+          class="_skeleton_2b95f1"
+        >
+          
+          
+        </li>
+        <li
+          class="_skeleton_2b95f1"
+        >
+          
+          
+        </li>
+        <li
+          class="_skeleton_2b95f1"
+        >
+          
+          
+        </li>
+        <li
+          class="_skeleton_2b95f1"
+        >
+          
+          
+        </li>
+        <li
+          class="_skeleton_2b95f1"
+        >
+          
+          
+        </li>
+        
+      </ol>
+    </div>
+    <div>
+      <span
+        class="_skeleton_26f4a9"
+      />
+      <ol
+        class="_list_437aec"
+      >
+        
+        <li
+          class="_skeleton_2b95f1"
+        >
+          
+          
+        </li>
+        <li
+          class="_skeleton_2b95f1"
+        >
+          
+          
+        </li>
+        <li
+          class="_skeleton_2b95f1"
+        >
+          
+          
+        </li>
+        <li
+          class="_skeleton_2b95f1"
+        >
+          
+          
+        </li>
+        <li
+          class="_skeleton_2b95f1"
+        >
+          
+          
+        </li>
+        
+      </ol>
+    </div>
+    
+  </div>
+  <!--v-if-->
+</div>
+`;

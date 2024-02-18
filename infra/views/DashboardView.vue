@@ -7,20 +7,16 @@
     import type Show from '@/domain/show/entity'
     import router from '@/infra/router';
 
-    const categories = ref<Categories | undefined>(undefined)
     const useCase = new Dashboard(['Drama', 'Thriller', 'Crime', 'Adventure','Music'])
+    const categories = useCase.categories
 
     useCase.on('dashboard:display', (show: Show) => {
         router.push(`/shows/${show.id}`)
     })
 
     provide('useCase', useCase)
-
-    onMounted(async () => {
-        categories.value = await useCase.categories
-    })
 </script>
 
 <template>
     <DashboardPage :categories="categories" v-if="categories" />
-</template>@/infra/adapters/use-cases/dashboard@/infra/router
+</template>
