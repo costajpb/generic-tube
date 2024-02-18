@@ -1,7 +1,5 @@
 <template>
-    <div :class="classes.skeleton">
-        <slot></slot>
-    </div>
+    <div :class="classes.skeleton"></div>
 </template>
 
 <style module="classes" lang="postcss">

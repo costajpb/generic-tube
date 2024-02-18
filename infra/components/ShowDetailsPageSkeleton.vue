@@ -5,10 +5,10 @@
 <template>
     <div :class="classes.container">
         <div>
-            <BaseSkeleton><div :class="classes.title"></div></BaseSkeleton>
+            <BaseSkeleton :class="classes.title" />
         </div>
         <div>
-            <BaseSkeleton><div :class="classes.content"></div></BaseSkeleton>
+            <BaseSkeleton :class="classes.content" />
         </div>
     </div>
 </template>
@@ -25,7 +25,6 @@
     }
 
     .content {
-        margin-block: var(--layout-margin-block-default);
         width: 50ch;
         max-width: 70vw;
         height: 5em;

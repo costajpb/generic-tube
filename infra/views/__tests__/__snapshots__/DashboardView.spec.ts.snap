@@ -3,170 +3,110 @@
 exports[`DashboardView > should render properly 1`] = `
 <div>
   <div
-    class="_categories_e6e1ae"
+    class="_categories_8ae98e"
   >
     
     <div>
-      <span
-        class="_skeleton_26f4a9"
+      <div
+        class="_skeleton_587f33 _name_9b2e19"
       />
       <ol
-        class="_list_437aec"
+        class="_list_9b2e19"
       >
         
-        <li
-          class="_skeleton_2b95f1"
-        >
-          
-          
-        </li>
-        <li
-          class="_skeleton_2b95f1"
-        >
-          
-          
-        </li>
-        <li
-          class="_skeleton_2b95f1"
-        >
-          
-          
-        </li>
-        <li
-          class="_skeleton_2b95f1"
-        >
-          
-          
-        </li>
-        <li
-          class="_skeleton_2b95f1"
-        >
-          
-          
-        </li>
+        <div
+          class="_skeleton_587f33 _show_9b2e19"
+        />
+        <div
+          class="_skeleton_587f33 _show_9b2e19"
+        />
+        <div
+          class="_skeleton_587f33 _show_9b2e19"
+        />
+        <div
+          class="_skeleton_587f33 _show_9b2e19"
+        />
+        <div
+          class="_skeleton_587f33 _show_9b2e19"
+        />
         
       </ol>
     </div>
     <div>
-      <span
-        class="_skeleton_26f4a9"
+      <div
+        class="_skeleton_587f33 _name_9b2e19"
       />
       <ol
-        class="_list_437aec"
+        class="_list_9b2e19"
       >
         
-        <li
-          class="_skeleton_2b95f1"
-        >
-          
-          
-        </li>
-        <li
-          class="_skeleton_2b95f1"
-        >
-          
-          
-        </li>
-        <li
-          class="_skeleton_2b95f1"
-        >
-          
-          
-        </li>
-        <li
-          class="_skeleton_2b95f1"
-        >
-          
-          
-        </li>
-        <li
-          class="_skeleton_2b95f1"
-        >
-          
-          
-        </li>
+        <div
+          class="_skeleton_587f33 _show_9b2e19"
+        />
+        <div
+          class="_skeleton_587f33 _show_9b2e19"
+        />
+        <div
+          class="_skeleton_587f33 _show_9b2e19"
+        />
+        <div
+          class="_skeleton_587f33 _show_9b2e19"
+        />
+        <div
+          class="_skeleton_587f33 _show_9b2e19"
+        />
         
       </ol>
     </div>
     <div>
-      <span
-        class="_skeleton_26f4a9"
+      <div
+        class="_skeleton_587f33 _name_9b2e19"
       />
       <ol
-        class="_list_437aec"
+        class="_list_9b2e19"
       >
         
-        <li
-          class="_skeleton_2b95f1"
-        >
-          
-          
-        </li>
-        <li
-          class="_skeleton_2b95f1"
-        >
-          
-          
-        </li>
-        <li
-          class="_skeleton_2b95f1"
-        >
-          
-          
-        </li>
-        <li
-          class="_skeleton_2b95f1"
-        >
-          
-          
-        </li>
-        <li
-          class="_skeleton_2b95f1"
-        >
-          
-          
-        </li>
+        <div
+          class="_skeleton_587f33 _show_9b2e19"
+        />
+        <div
+          class="_skeleton_587f33 _show_9b2e19"
+        />
+        <div
+          class="_skeleton_587f33 _show_9b2e19"
+        />
+        <div
+          class="_skeleton_587f33 _show_9b2e19"
+        />
+        <div
+          class="_skeleton_587f33 _show_9b2e19"
+        />
         
       </ol>
     </div>
     <div>
-      <span
-        class="_skeleton_26f4a9"
+      <div
+        class="_skeleton_587f33 _name_9b2e19"
       />
       <ol
-        class="_list_437aec"
+        class="_list_9b2e19"
       >
         
-        <li
-          class="_skeleton_2b95f1"
-        >
-          
-          
-        </li>
-        <li
-          class="_skeleton_2b95f1"
-        >
-          
-          
-        </li>
-        <li
-          class="_skeleton_2b95f1"
-        >
-          
-          
-        </li>
-        <li
-          class="_skeleton_2b95f1"
-        >
-          
-          
-        </li>
-        <li
-          class="_skeleton_2b95f1"
-        >
-          
-          
-        </li>
+        <div
+          class="_skeleton_587f33 _show_9b2e19"
+        />
+        <div
+          class="_skeleton_587f33 _show_9b2e19"
+        />
+        <div
+          class="_skeleton_587f33 _show_9b2e19"
+        />
+        <div
+          class="_skeleton_587f33 _show_9b2e19"
+        />
+        <div
+          class="_skeleton_587f33 _show_9b2e19"
+        />
         
       </ol>
     </div>

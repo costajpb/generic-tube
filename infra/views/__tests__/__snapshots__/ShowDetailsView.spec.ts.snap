@@ -1,0 +1,25 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ShowDetailsView > should render 1`] = `
+<div
+  data-v-app=""
+>
+  
+  <div
+    class="_container_d7b010"
+  >
+    <div>
+      <div
+        class="_skeleton_587f33 _title_d7b010"
+      />
+    </div>
+    <div>
+      <div
+        class="_skeleton_587f33 _content_d7b010"
+      />
+    </div>
+  </div>
+  <!--v-if-->
+  
+</div>
+`;

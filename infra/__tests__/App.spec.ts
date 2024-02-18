@@ -2,6 +2,7 @@ import { flushPromises, mount } from '@vue/test-utils'
 import router from "@/infra/router"
 import clickOutside from '@/infra/directives/click-outside'
 import App from '@/infra/App.vue'
+import snapshowWrapper from './snapshotWrapper'
 
 const mocks = vi.hoisted(async () => ({
     UseCase: await vi.importActual('@/application/shared/use-case'),
@@ -28,6 +29,10 @@ vi.mock('@/infra/util/debounce', () => ({
 }))
 
 describe('App', () => {
+    it('should render', () => {
+        expect(snapshowWrapper(App, {plugins: [router]})).toMatchSnapshot()
+    })
+
     it('should allow searching shows with debounce', async () => {
         router.push('/')
         await router.isReady()

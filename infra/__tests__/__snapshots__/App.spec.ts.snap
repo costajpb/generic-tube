@@ -1,0 +1,93 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`App > should render 1`] = `
+<div
+  data-v-app=""
+>
+  
+  <header
+    class="_container_078796"
+  >
+    <h1
+      class="_title_078796"
+    >
+       ABN Amro Tube 
+    </h1>
+    <div
+      class="_extra_078796"
+    >
+      
+      
+      <a
+        class="_trigger_22e8e9"
+        href="#search"
+      >
+        Search
+      </a>
+      <section
+        class="_container_122c2d"
+        data-is-active="false"
+        id="search"
+      >
+        <div
+          class="_actions_122c2d"
+        >
+          <a
+            class="_close_122c2d"
+            href="#"
+          >
+            <span>
+              Close
+            </span>
+          </a>
+          <input
+            class="_input_122c2d"
+            placeholder="Search shows..."
+            type="search"
+          />
+        </div>
+        <div
+          class="_container_ea0614"
+          style="display: none;"
+        >
+          
+          <!--v-if-->
+          <ol
+            class="_grid_bd911a"
+            style="display: none;"
+          >
+            
+            <li
+              class="_grid__item_bd911a"
+            />
+            <li
+              class="_grid__item_bd911a"
+            />
+            <li
+              class="_grid__item_bd911a"
+            />
+            <li
+              class="_grid__item_bd911a"
+            />
+            <li
+              class="_grid__item_bd911a"
+            />
+            <li
+              class="_grid__item_bd911a"
+            />
+            <li
+              class="_grid__item_bd911a"
+            />
+            
+          </ol>
+          
+        </div>
+      </section>
+      
+      
+    </div>
+  </header>
+  <!---->
+  
+</div>
+`;

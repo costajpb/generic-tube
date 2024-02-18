@@ -26,7 +26,9 @@ exports[`infra/components/show-details-page-episodes > should render 1`] = `
           >
             Episode title
           </h3>
-          <p>
+          <p
+            class="_duration_37b976"
+          >
             56m
           </p>
         </header>

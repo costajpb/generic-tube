@@ -3,6 +3,7 @@ import DashboardView from '@/infra/views/DashboardView.vue'
 import router from "@/infra/router"
 import Dashboard from "@/application/dashboard"
 import clickOutside from "@/infra/directives/click-outside"
+import snapshowWrapper from "@/infra/__tests__/snapshotWrapper"
 
 function mountWithDirective(component: any) {
     return mount(component, {
@@ -16,8 +17,7 @@ function mountWithDirective(component: any) {
 
 describe('DashboardView', () => {
     it('should render properly', () => {
-        const wrapper = mountWithDirective(DashboardView)
-        expect(wrapper.element).toMatchSnapshot()
+        expect(snapshowWrapper(DashboardView)).toMatchSnapshot()
     })
 
     it('should display a show upon request', async () => {

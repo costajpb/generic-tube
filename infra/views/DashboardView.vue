@@ -1,7 +1,7 @@
 <script setup lang="ts">
     import Dashboard from '@/infra/adapters/use-cases/dashboard'
     import { provide } from 'vue';
-    import DashboardPage from '@/infra/components/DashboardPage.vue';
+    import PageDashboard from '@/infra/components/PageDashboard.vue';
     import type Show from '@/domain/show/entity'
     import router from '@/infra/router';
 
@@ -16,5 +16,5 @@
 </script>
 
 <template>
-    <DashboardPage :categories="categories" v-if="categories" />
+    <PageDashboard :categories="categories" v-if="categories" />
 </template>

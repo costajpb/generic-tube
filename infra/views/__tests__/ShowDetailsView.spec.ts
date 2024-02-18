@@ -2,6 +2,7 @@ import router from "@/infra/router"
 import { flushPromises, mount } from "@vue/test-utils"
 import ShowDetailsView from "@/infra/views/ShowDetailsView.vue"
 import ShowDetails from '@/application/show-details'
+import snapshowWrapper from "@/infra/__tests__/snapshotWrapper"
 
 vi.mock('vue-router', async (importOriginal) => {
     const mod = await importOriginal<typeof import('vue-router')>()
@@ -16,6 +17,10 @@ vi.mock('vue-router', async (importOriginal) => {
 })
 
 describe('ShowDetailsView', () => {
+    it('should render', () => {
+        expect(snapshowWrapper(ShowDetailsView)).toMatchSnapshot()
+    })
+
     it('should return to dashboard upon request', async () => {
         vi.spyOn(ShowDetails.prototype, 'details', 'get').mockResolvedValue({
             id: 1,
