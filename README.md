@@ -49,9 +49,9 @@ One may pull the "Over-engineering" card on layering out the business logic of t
 
 Other than that, one major advantage of this approach should be to retain functionality over major refactors and technology shifts. And that's not to say moving away from Vue.js. The framework is already in it's third version, there might be more to come, and transitioning can be less of a headache with DDD. While keeping things agnostic closer to the domain, the changes in the view layer can be carried out more easily.
 
-Of course, plumbing code is entailed when such a route is taken. For example, procedural navigation is enforced to cope with navigation events, which means that the `router-link` component can't be used as such.
+Of course, plumbing code is entailed when such a route is taken. For example, procedural navigation is enforced to cope with navigation events. That means that the `router-link` component can't be used as such.
 
-A major shortcoming from that is that the `push` method from the router for procedural navigtaion forces a full page reload. Given there are advantages to adopting DDD, that might not be a deal breaker. Or should that part of the implementation deviate from the DDD use scenario. Anyway, since Vue.js itself heavily relies on event handling, this practice should not be considered a subversion of the Vue.js paradigm.
+A major shortcoming from that is that the `push` method from the router for procedural navigtaion forces a full page reload. Not only is it performance detrimental, but also it poses challenges to the application state management. One potential solution would be a procedural click on a hidden `router-link`, but that needs testing. Or should that part of the implementation deviate from the DDD use scenario. Anyway, since Vue.js itself heavily relies on event handling, this practice still complies to a good extent with the Vue.js paradigm.
 
 ### Typescript
 It's true that Vue.js allows no-build applications, meaning that Typescript is no hard requirement strictly speaking. However, the `domain` layer, for instance, is mostly about some types and interfaces, which would be unattainable without Typescript. Additionally, Typescript can settle an agreement layer between developers, which is much need especially in large projects and is probably why ABN Amro has it as a requirement for the vacancy this project is meant for.
@@ -64,12 +64,10 @@ Based on that, [Open Props](https://open-props.style/) were adopted to somehow f
 The option of [PostCSS](https://postcss.org/) for the CSS flavor was just enough to allow incremental addition of features to make working with _quasi_-vanilla CSS "bearable". For example, it allows the use of CSS nesting today, even though [it's still a working draft.](https://caniuse.com/css-nesting)
 
 ### No dedicated state management system
-Based on the requirements and in order to keep it simple, a dedicated state management system was not adopted. In hindsight, though, it could have helped with the [remaining bug with the show search component](#known-issues).
-
-Were this application to be developed further, [Pinia](https://pinia.vuejs.org/) should be the state management to adopt. Not only is it maintained by those who maintain Vue.js, but also it's oddly intuitive.
+Based on the requirements and in order to keep it simple, a dedicated state management system was not adopted. Were this application to be developed further, [Pinia](https://pinia.vuejs.org/) should be the state management to adopt. Not only is it maintained by those who maintain Vue.js, but also it's oddly intuitive.
 
 ### Known issues
-- On the mobile view, picking a show from the search and then navigating back from the details page will have the user land on the search again, but the previous results are not kept.
+- On the mobile view, picking a show from the search and then navigating back from the details page will have the user land on the search again, but the previous results are not kept. This might be related to the use of procedural navigation. A state management system, if used, could help out.
 - There are a couple of unit tests which might fail randomly; that is due to inefficient data mocking. Those tests are trying to reach out the internet and sometimes the requests fail to complete in due time.
 - Some shows don't feature a cover image or summary, or their episodes. To keep up with data, those are still displayed but it might not be the best in terms of looks.
 
@@ -77,4 +75,4 @@ Were this application to be developed further, [Pinia](https://pinia.vuejs.org/)
 Were this project to be developed further, even though it features all the given requirements, there are some points which could use more attention. To name a few:
 - Handling edge cases and error scenarios.
 - Assets optimization — images are neither large enough for the jumbotron on the details page, nor small enough for the thumbnails.
-- Search results persisting after navigation.
+- Search results should persist after navigation and it's procedural nature should not force a full reload of the page.
