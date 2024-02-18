@@ -1,7 +1,7 @@
 import { mount } from "@vue/test-utils";
 import clickOutside from "../directives/click-outside";
 
-export default function snapshowWrapper(component: any, global = {}, props = {}, provide = {}) {
+export default function snapshowWrapper(component: any, global = {}, props = {}) {
     return mount(component, {
         props: {
             ...props
@@ -11,9 +11,6 @@ export default function snapshowWrapper(component: any, global = {}, props = {},
                 'click-outside': clickOutside
             },
             ...global,
-        },
-        provide: {
-            ...provide
         }
     }).element
 }

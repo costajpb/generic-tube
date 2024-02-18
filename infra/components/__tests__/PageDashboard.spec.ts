@@ -3,6 +3,8 @@ import PageDashboardVue from "../PageDashboard.vue"
 
 describe('infra/components/PageDashboard', () => {
     it('should render', () => {
-        expect(snapshowWrapper(PageDashboardVue)).toMatchSnapshot()
+        expect(snapshowWrapper(PageDashboardVue, {}, {
+            categories: Promise.resolve({})
+        })).toMatchSnapshot()
     })
 })

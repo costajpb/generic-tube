@@ -3,7 +3,7 @@
 exports[`infra/components/ShowSearchTrigger > should render 1`] = `
 <a
   class="_trigger_22e8e9"
-  href="#undefined"
+  href="#anchor"
 >
   Search
 </a>

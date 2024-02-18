@@ -3,6 +3,8 @@ import ShowSearchTrigger from "../ShowSearchTrigger.vue"
 
 describe('infra/components/ShowSearchTrigger', () => {
     it('should render', () => {
-        expect(snapshowWrapper(ShowSearchTrigger)).toMatchSnapshot()
+        expect(snapshowWrapper(ShowSearchTrigger, {}, {
+            anchor: 'anchor'
+        })).toMatchSnapshot()
     })
 })
