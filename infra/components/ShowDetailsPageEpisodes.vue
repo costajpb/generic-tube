@@ -34,7 +34,8 @@
         line-height: 2;
         border-bottom: var(--border-size-2) var(--color-branding-primary-100) solid;
         margin: 0;
-        font-weight: normal;
+        font-weight: var(--font-weight-bold);
+        color: var(--color-branding-primary-200);
 
         @media (min-width: 700px) {
             box-sizing: border-box;
@@ -65,7 +66,7 @@
         display: block;
         font-weight: var(--font-weight-6);
         font-size: var(--font-size-2);
-        color: var(--heading-color);
+        color: var(--color-branding-primary-200);
         margin: 0;
         line-height: var(--line-height-1);
     }

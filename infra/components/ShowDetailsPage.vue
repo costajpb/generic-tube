@@ -69,6 +69,8 @@
             background: rgba(0,0,0,50%);
             z-index: var(--layer-1);
             font-size: var(--font-size-fluid-3);
+            color: var(--color-text-default-on-brand);
+            font-weight: unset;
         }
     }
 
