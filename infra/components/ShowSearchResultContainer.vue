@@ -6,11 +6,11 @@
 
 <style module="classes">
     .container {
-        padding: var(--layout-margin-inline-default);
+        padding-bottom: var(--layout-margin-inline-default);
 
         @media (min-width: 700px) {
             padding: var(--layout-margin-block-compact);
-            border: var(--border-size-3) solid var(--color-branding-primary-100);
+            border: var(--border-size-3) solid var(--color-branding-secondary);
             border-radius: var(--radius-2);
             position: absolute;
             width: 100%;

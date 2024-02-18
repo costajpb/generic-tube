@@ -1,6 +1,10 @@
+<script setup lang="ts">
+    import BaseSkeleton from './BaseSkeleton.vue';
+</script>
+
 <template>
     <ol :class="classes.grid">
-        <li :class="classes.grid__item" v-for="index in 7" :key="index"></li>
+        <BaseSkeleton tagName="li" :class="classes.item" v-for="index in 7" :key="index" />
     </ol>
 </template>
 
@@ -18,24 +22,8 @@
             margin: 0;
         }
     }
-
-    @keyframes gradient {
-        0% {
-            background-position: -100px
-        }
-
-        40%, 100% {
-            background-position: 140px
-        }
-    }
-  
-  
-  
-    .grid__item {
+    
+    .item {
         height: 150px;
-        border-radius: var(--radius-2);
-        animation: gradient 1500ms infinite linear;
-        background: linear-gradient(90deg, var(--gray-3) 0px, var(--gray-2) 40px, var(--gray-3) 80px);
-        background-size: 600px;
     }
 </style>

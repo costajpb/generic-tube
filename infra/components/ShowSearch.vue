@@ -66,10 +66,17 @@
         display: flex;
         gap: var(--layout-margin-block-compact);
         align-items: end;
+        /* FIXME */
+        background: white;
+        z-index: var(--layer-1);
+        padding-block: var(--layout-margin-block-default);
 
         @media (min-width: 700px) {
             position: static;
             display: block;
+            background: transparent;
+            z-index: unset;
+            padding-block: unset;
         }
     }
     
@@ -102,7 +109,7 @@
         z-index: var(--layer-5);
         display: flex;
         flex-direction: column;
-        padding: var(--layout-margin-inline-default);
+        padding-inline: var(--layout-margin-inline-default);
 
         &:target {
             left: 0;

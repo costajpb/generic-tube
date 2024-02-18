@@ -58,26 +58,47 @@ exports[`App > should render 1`] = `
           >
             
             <li
-              class="_grid__item_bd911a"
-            />
+              class="_wrapper_587f33 _item_bd911a"
+            >
+              
+              
+            </li>
             <li
-              class="_grid__item_bd911a"
-            />
+              class="_wrapper_587f33 _item_bd911a"
+            >
+              
+              
+            </li>
             <li
-              class="_grid__item_bd911a"
-            />
+              class="_wrapper_587f33 _item_bd911a"
+            >
+              
+              
+            </li>
             <li
-              class="_grid__item_bd911a"
-            />
+              class="_wrapper_587f33 _item_bd911a"
+            >
+              
+              
+            </li>
             <li
-              class="_grid__item_bd911a"
-            />
+              class="_wrapper_587f33 _item_bd911a"
+            >
+              
+              
+            </li>
             <li
-              class="_grid__item_bd911a"
-            />
+              class="_wrapper_587f33 _item_bd911a"
+            >
+              
+              
+            </li>
             <li
-              class="_grid__item_bd911a"
-            />
+              class="_wrapper_587f33 _item_bd911a"
+            >
+              
+              
+            </li>
             
           </ol>
           
