@@ -82,6 +82,7 @@ The option of [PostCSS](https://postcss.org/) for the CSS flavor was just enough
 Based on the requirements and in order to keep it simple, a dedicated state management system was not adopted. Were this application to be developed further, [Pinia](https://pinia.vuejs.org/) should be system to be adopted. Not only is it maintained by those who maintain Vue.js, but also it's oddly intuitive.
 
 ### Known issues
+
 - On the desktop view, picking a show from the search and then navigating back from the details page will have the user meet the old search results again. It doesn't break anything, but is an odd behavior for a non-modal popover nonetheless.
 - There are a couple of unit tests which might fail randomly; that is due to inefficient data mocking. Those tests are mistakenly trying to reach out the internet and sometimes the requests fail to complete in due time.
 - Some shows don't feature a cover image or summary, or their episodes. To keep up with data, those are still displayed but it might not be the best in terms of looks.
