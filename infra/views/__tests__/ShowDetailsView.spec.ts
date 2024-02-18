@@ -44,7 +44,6 @@ describe('ShowDetailsView', () => {
     const wrapper = mount(ShowDetailsView)
 
     await flushPromises()
-
     ;(wrapper.vm as any).useCase.emit('showDetails:return')
 
     expect(push).toHaveBeenCalledWith('/')

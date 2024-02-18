@@ -14,7 +14,7 @@ describe('infra/components/PageDashboardCategoryShowSkeleton', () => {
         {
           name: 'Category',
           shows: []
-        },
+        }
       )
     ).toMatchSnapshot()
   })

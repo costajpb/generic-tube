@@ -40,7 +40,6 @@ describe('DashboardView', () => {
     const show = { id: 1 }
 
     await flushPromises()
-
     ;(wrapper.vm as any).useCase.emit('dashboard:display', show)
 
     expect(push).toHaveBeenCalledWith(`/shows/${show.id}`)
