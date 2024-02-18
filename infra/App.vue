@@ -1,12 +1,12 @@
 <script setup lang="ts">
   import { RouterView } from 'vue-router'
-  import PageHeader from '@/infra/components/PageHeader.vue';
+  import LayoutHeader from '@/infra/components/LayoutHeader.vue';
   import ShowSearch from './components/ShowSearch.vue';
 </script>
 
 <template>
-  <PageHeader>
+  <LayoutHeader>
     <ShowSearch />
-  </PageHeader>
+  </LayoutHeader>
   <RouterView />
 </template>
