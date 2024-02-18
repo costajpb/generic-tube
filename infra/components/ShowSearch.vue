@@ -1,5 +1,5 @@
 <script setup lang="ts">
-    import { computed, ref } from 'vue';
+    import { computed, ref, watchEffect } from 'vue';
     import ShowSearchResult from '@/infra/components/ShowSearchResult.vue'
     import type Show from '@/domain/show/entity';
     import debounce from '@/infra/util/debounce';
@@ -17,7 +17,10 @@
         
         (async () => {
             const value = target.value
-            if (!value.length) return result.value = undefined
+            if (!value.length) {
+                isLoading.value = false;
+                return debounce(() => result.value = undefined)
+            }
             if (value.length > 2) {
                 isLoading.value = true
                 result.value = undefined

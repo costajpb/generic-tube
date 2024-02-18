@@ -2,6 +2,12 @@ import { DOMWrapper, flushPromises, mount } from "@vue/test-utils"
 import ShowSearch from "@/infra/components/ShowSearch.vue"
 import clickOutside from "@/infra/directives/click-outside"
 
+vi.mock('@/infra/util/debounce', () => ({
+    default: (fn: () => void) => {
+        fn()
+    }
+}))
+
 describe('components/show-search', () => {
     let wrapper: ReturnType<typeof mount>
     let input: DOMWrapper<Element>
