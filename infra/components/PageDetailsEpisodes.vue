@@ -49,6 +49,7 @@
         /* FIXME: 300px */
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
         gap: var(--layout-margin-block-default);
+        grid-auto-rows: 1fr;
         max-height: 60vh;
         overflow: auto;
         background: var(--gray-0);
@@ -69,6 +70,10 @@
         color: var(--color-branding-primary-200);
         margin: 0;
         line-height: var(--line-height-1);
+        -webkit-line-clamp: 2;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
     }
     .episode {
         display: grid;
@@ -77,7 +82,7 @@
             "g g"
         ;
         gap: var(--size-2);
-        grid-template-columns: minmax(10ch, 20vw) auto;
+        grid-template-columns: auto 50%;
         box-shadow: var(--shadow-4);
         padding: var(--size-2) var(--size-4);
         /* FIXME */
