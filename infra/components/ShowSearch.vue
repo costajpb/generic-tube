@@ -62,6 +62,7 @@
         top: 0;
         display: flex;
         gap: var(--layout-margin-block-compact);
+        align-items: end;
 
         @media (min-width: 700px) {
             position: static;
@@ -77,9 +78,7 @@
         &:before {
             content: url('/arrow-left.svg');
             display: inline-block;
-            width: var(--font-size-2);
-            height: var(--font-size-2);
-            vertical-align: middle;
+            width: var(--font-size-4);
         }
 
         @media (min-width: 700px) {
