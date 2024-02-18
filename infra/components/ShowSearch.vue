@@ -72,8 +72,7 @@
         display: flex;
         gap: var(--layout-margin-block-compact);
         align-items: end;
-        /* FIXME */
-        background: white;
+        background: var(--color-background-default);
         z-index: var(--layer-1);
         padding-block: var(--layout-margin-block-default);
 

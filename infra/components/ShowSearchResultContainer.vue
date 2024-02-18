@@ -18,8 +18,7 @@
             overflow: auto;
             top: 100%;
             right: 0;
-            /* FIXME */
-            background: white;
+            background: var(--color-background-default);
             box-shadow: var(--shadow-6);
             border-radius: var(--radius-2);
         }

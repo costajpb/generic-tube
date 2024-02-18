@@ -16,8 +16,7 @@
         height: var(--size-7);
         width: var(--size-7);
         display: inline-block;
-        /* FIXME */
-        background: white;
+        background: var(--color-background-default);
         border-radius: var(--radius-round);
         vertical-align: middle;
 
@@ -31,7 +30,6 @@
             text-indent: 0;
         }
 
-        /* FIXME: use custom media */
         @media (min-width: 700px) {
             display: none
         }

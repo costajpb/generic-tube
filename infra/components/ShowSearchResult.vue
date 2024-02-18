@@ -53,7 +53,6 @@
         font-size: var(--font-size-5);
         font-weight: var(--font-weight-5);
         margin-block: var(--size-4);
-        /* FIXME */
-        color: var(--gray-6);
+        color: var(--color-text-muted-on-light);
     }
 </style>

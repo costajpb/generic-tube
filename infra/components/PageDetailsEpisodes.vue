@@ -46,7 +46,6 @@
     .episodes {
         list-style: none;
         display: grid;
-        /* FIXME: 300px */
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
         gap: var(--layout-margin-block-default);
         grid-auto-rows: 1fr;
@@ -85,8 +84,7 @@
         grid-template-columns: auto 50%;
         box-shadow: var(--shadow-4);
         padding: var(--size-2) var(--size-4);
-        /* FIXME */
-        background-color: white;
+        background-color: var(--color-background-default);
         border-radius: var(--radius-2);
         transition: transform ease 300ms;
 

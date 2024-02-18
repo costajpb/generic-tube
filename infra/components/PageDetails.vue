@@ -136,8 +136,7 @@
             position: relative;
             overflow: hidden;
             display: block;
-            /* FIXME */
-            color: white;
+            color: var(--color-text-default-on-brand);
 
             &:hover {
                 height: 50vw;
