@@ -23,6 +23,7 @@ a {
   --color-text-default-on-brand: white;
   --color-text-muted-on-light: var(--gray-6);
   --color-background-default: white;
+  --color-background-muted: var(--gray-2);
 
   /* layout */
   --layout-margin-inline-default: var(--size-4);

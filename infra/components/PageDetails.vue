@@ -137,6 +137,7 @@
             overflow: hidden;
             display: block;
             color: var(--color-text-default-on-brand);
+            background-color: var(--color-background-muted);
 
             &:hover {
                 height: 50vw;

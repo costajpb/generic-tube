@@ -53,11 +53,14 @@
         position: absolute;
         width: 100%;
         height: 100%;
+        color: var(--color-text-muted-on-light);
+        text-align: center;
     }
 
     .cover {
         object-fit: cover;
         width: 100%;
         height: 100%;
+        font-style: italic;
     }
 </style>
