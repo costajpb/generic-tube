@@ -3,7 +3,7 @@
 </script>
 
 <template>
-    <BaseSkeleton :class="classes.skeleton">
+    <BaseSkeleton :class="classes.skeleton" tagName="li">
         <slot></slot>
     </BaseSkeleton>
 </template>

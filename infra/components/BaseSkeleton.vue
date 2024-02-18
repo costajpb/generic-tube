@@ -1,9 +1,13 @@
-<script setup lang="ẗs"></script>
+<script setup lang="ts">
+    const props = defineProps<{
+        tagName?: string
+    }>()
+</script>
 
 <template>
-    <div :class="classes.wrapper">
+    <component :is="props.tagName || 'div'" :class="classes.wrapper">
         <slot></slot>
-    </div>
+    </component>
 </template>
 
 <style module="classes" lang="postcss">
