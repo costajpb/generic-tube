@@ -6,16 +6,15 @@ describe('infra/components/PageDashboardCategoryShowSkeleton', () => {
     expect(
       snapshowWrapper(
         PageDashboardCategoryShowSkeleton,
-        {},
-        {
-          name: 'Category',
-          shows: []
-        },
         {
           useCase: {
             display: () => {}
           }
-        }
+        },
+        {
+          name: 'Category',
+          shows: []
+        },
       )
     ).toMatchSnapshot()
   })
