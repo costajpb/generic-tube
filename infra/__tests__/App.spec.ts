@@ -1,6 +1,6 @@
 import { flushPromises, mount } from '@vue/test-utils'
 import router from "@/infra/router"
-import clickOutside from '@/infra/directives/click-outside'
+import clickOutside from '@/infra/directives/clickOutside'
 import App from '@/infra/App.vue'
 import snapshowWrapper from './snapshotWrapper'
 

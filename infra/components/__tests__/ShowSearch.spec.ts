@@ -1,6 +1,6 @@
 import { DOMWrapper, flushPromises, mount } from "@vue/test-utils"
 import ShowSearch from "@/infra/components/ShowSearch.vue"
-import clickOutside from "@/infra/directives/click-outside"
+import clickOutside from "@/infra/directives/clickOutside"
 
 vi.mock('@/infra/util/debounce', () => ({
     default: (fn: () => void) => {
@@ -45,5 +45,25 @@ describe('components/show-search', () => {
         input.trigger('input')
 
         expect((wrapper.vm as any).result).toBe(undefined)
+    })
+
+    describe('showContainer', () => {
+        test('result is defined', () => {
+            const vm = wrapper.vm as any
+            vm.isTransitioning = false
+            vm.isActive = true
+            vm.result = []
+
+            expect(vm.showContainer).toBeTruthy()
+        })
+
+        test('is loading', () => {
+            const vm = wrapper.vm as any
+            vm.isTransitioning = false
+            vm.isActive = true
+            vm.isLoading = true
+
+            expect(vm.showContainer).toBeTruthy()
+        })
     })
 })

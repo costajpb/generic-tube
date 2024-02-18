@@ -2,7 +2,7 @@ import { flushPromises, mount } from "@vue/test-utils"
 import DashboardView from '@/infra/views/DashboardView.vue'
 import router from "@/infra/router"
 import Dashboard from "@/application/dashboard"
-import clickOutside from "@/infra/directives/click-outside"
+import clickOutside from "@/infra/directives/clickOutside"
 import snapshowWrapper from "@/infra/__tests__/snapshotWrapper"
 
 function mountWithDirective(component: any) {

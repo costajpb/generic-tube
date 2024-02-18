@@ -7,7 +7,8 @@
     import SearchShows from '@/infra/adapters/use-cases/search-shows';
     import ShowSearchResultContainer from './ShowSearchResultContainer.vue';
     import ShowSearchResultSkeleton from './ShowSearchResultSkeleton.vue';
-    
+    import useTransition from '@/infra/composables/useTransition'
+
     const result = ref<Show[] | undefined>(undefined)
     const isLoading = ref(false)
     const useCase = new SearchShows()
@@ -37,26 +38,22 @@
     const activate = () => isActive.value = true
     const deactivate = () => isActive.value = false
 
-    const isTransitioning = ref(false)
-
-    const transitionStart = () => isTransitioning.value = true
-
-    const transitionEnd = () => isTransitioning.value = false
-
     const showContainer = computed(() => !isTransitioning.value && isActive.value && (result.value || isLoading.value))
 
     const input = ref<HTMLInputElement | null>(null)
 
-    const check = () => {
+    const setFocus = () => {
         if (!isActive.value) input.value?.focus()
     }
+
+    const isTransitioning = useTransition(input)
 </script>
 <template>
     <ShowSearchTrigger anchor="search" />
-    <section id="search" :class="classes.container" :data-is-active="isActive" v-click-outside="deactivate" @transitionend="check">
+    <section id="search" :class="classes.container" :data-is-active="isActive" v-click-outside="deactivate" @transitionend="setFocus">
         <div :class="classes.actions">
             <a :class="classes.close" href="#"><span>Close</span></a>
-            <input ref="input" :class="classes.input" @transitionstart="transitionStart" @transitionend="transitionEnd" @focus="activate" placeholder="Search shows..." type="search" @input="searchShows" />
+            <input ref="input" :class="classes.input" @focus="activate" placeholder="Search shows..." type="search" @input="searchShows" />
         </div>
         <ShowSearchResultContainer v-show="showContainer">
             <ShowSearchResult :result="result" v-if="result" />
@@ -138,7 +135,6 @@
         transition: width ease-in-out 300ms;
         width: 15em;
         line-height: 2;
-        /* FIMXE: size this input properly */
 
         .container[data-is-active="true"] & {
             @media (min-width: 700px) {

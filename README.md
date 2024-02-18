@@ -70,9 +70,11 @@ Based on the requirements and in order to keep it simple, a dedicated state mana
 - On the mobile view, picking a show from the search and then navigating back from the details page will have the user land on the search again, but the previous results are not kept. This might be related to the use of procedural navigation. A state management system, if used, could help out.
 - There are a couple of unit tests which might fail randomly; that is due to inefficient data mocking. Those tests are trying to reach out the internet and sometimes the requests fail to complete in due time.
 - Some shows don't feature a cover image or summary, or their episodes. To keep up with data, those are still displayed but it might not be the best in terms of looks.
+- The employed layout algorithms can't cover all the show cover images aspect ratios. Some very quirk ones will let the background color of the listing through. 
 
 ### Moving forward
 Were this project to be developed further, even though it features all the given requirements, there are some points which could use more attention. To name a few:
 - Handling edge cases and error scenarios.
 - Assets optimization — images are neither large enough for the jumbotron on the details page, nor small enough for the thumbnails.
 - Search results should persist after navigation and it's procedural nature should not force a full reload of the page.
+- Improve the layout algorithms for listings where cover images with a quirky aspect ratio let the background color show through.

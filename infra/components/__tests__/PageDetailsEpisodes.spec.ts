@@ -1,6 +1,6 @@
 import { mount } from "@vue/test-utils"
 import ShowDetailsPageEpisodes from '@/infra/components/PageDetailsEpisodes.vue';
-import clickOutside from "@/infra/directives/click-outside"
+import clickOutside from "@/infra/directives/clickOutside"
 
 describe('infra/components/PageDetailsEpisodes', () => {
     it('should render', () => {
