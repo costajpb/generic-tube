@@ -1,4 +1,5 @@
 import UseCase, { type Emitter } from "@/application/shared/use-case";
+import type { ShowWithEpisodes } from "@/domain/show/entity";
 import type Show from "@/domain/show/entity";
 import type Shows from "@/domain/show/repository";
 
@@ -10,8 +11,8 @@ export default class ShowDetails extends UseCase {
         this.id = id
     }
 
-    get details(): Promise<Show> {
-        return this.repository.find(this.id)
+    get details() {
+        return this.repository.find(this.id) as Promise<ShowWithEpisodes>
     }
 
     return() {
