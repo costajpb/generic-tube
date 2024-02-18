@@ -27,6 +27,7 @@
     .content {
         margin-block: var(--layout-margin-block-default);
         width: 50ch;
+        max-width: 70vw;
         height: 5em;
     }
 </style>
