@@ -13,7 +13,7 @@
             <article :class="classes.episode">
                 <header :class="classes['episode-header']">
                     <h3 :class="classes['episode-title']">{{ episode.title }}</h3>
-                    <p>{{ episode.duration }}m</p>
+                    <p :class="classes.duration">{{ episode.duration }}m</p>
                 </header>
                 <img :class="classes.cover" :src="episode.coverImage" :alt="episode.title" />
                 <div :class="classes.summary" v-html="episode.summary" />
@@ -67,6 +67,7 @@
         font-size: var(--font-size-2);
         color: var(--heading-color);
         margin: 0;
+        line-height: var(--line-height-1);
     }
     .episode {
         display: grid;
@@ -105,5 +106,22 @@
         display: -webkit-box;
         -webkit-box-orient: vertical;
         overflow: hidden;
+
+        p {
+            margin: 0;
+        }
+    }
+
+    .duration {
+        border: var(--border-size-1) solid var(--gray-4);
+        border-radius: var(--radius-2);
+        display: inline-block;
+        padding: var(--size-1) var(--size-1);
+        margin-top: var(--size-1);
+
+        &:before {
+            content: "🕗";
+            margin-right: var(--size-1);
+        }
     }
 </style>

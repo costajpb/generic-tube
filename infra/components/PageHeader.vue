@@ -37,7 +37,6 @@
         margin: 0; 
         font-size: var(--font-size-app);
         font-weight: var(--font-weight-bold);
-        line-height: var(--line-height-1);
         color: var(--color-text-default-on-brand);
         text-decoration: none;
 

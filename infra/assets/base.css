@@ -32,14 +32,14 @@ a {
 
   /* font-sizes */
   --font-size-app: var(--font-size-4);
-  --font-size-h1: var(--size-fluid-8);
+  --font-size-h1: var(--size-fluid-3);
   --font-size-h2: var(--size-fluid-3);
 
   /* font-weight */
   --font-weight-bold: var(--font-weight-9);
 
   /* line-height */
-  --line-height-1: var(--font-line-height-1);
+  --line-height-1: var(--font-lineheight-00);
 }
 
 html {

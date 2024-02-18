@@ -52,17 +52,14 @@
             margin-inline: 0;
             display: block;
         }
-
-        p {
-            margin: 0
-        }
     }
 
     .title {
-        font-size: var(--font-size-4);
-        margin-block: var(--size-2);
+        font-size: var(--font-size-h1);
+        margin-block: var(--layout-margin-block-default);
         display: block;
-        font-weight: var(--font-weight-4);
+        font-weight: var(--font-weight-bold);
+        color: var(--color-branding-primary-200);
 
         @media (min-width: 700px) {
             margin: 0;
@@ -149,6 +146,10 @@
 
     .summary {
         margin-block: var(--layout-margin-block-default);
+
+        p {
+            margin: 0
+        }
 
         @media (min-width: 700px) {
             margin-block: 0;
