@@ -1,5 +1,5 @@
 <script setup lang="ts">
-    import { computed, ref } from 'vue';
+    import { computed, onMounted, ref } from 'vue';
     import ShowSearchResult from '@/infra/components/ShowSearchResult.vue'
     import type Show from '@/domain/show/entity';
     import debounce from '@/infra/util/debounce';
@@ -44,13 +44,19 @@
     const transitionEnd = () => isTransitioning.value = false
 
     const showContainer = computed(() => !isTransitioning.value && isActive.value && (result.value || isLoading.value))
+
+    const input = ref<HTMLInputElement | null>(null)
+
+    const check = () => {
+        if (!isActive.value) input.value?.focus()
+    }
 </script>
 <template>
     <ShowSearchTrigger anchor="search" />
-    <section id="search" :class="classes.container" :data-is-active="isActive" v-click-outside="deactivate">
+    <section id="search" :class="classes.container" :data-is-active="isActive" v-click-outside="deactivate" @transitionend="check">
         <div :class="classes.actions">
             <a :class="classes.close" href="#"><span>Close</span></a>
-            <input :class="classes.input" @transitionstart="transitionStart" @transitionend="transitionEnd" @focus="activate" placeholder="Search shows..." type="search" @input="searchShows" />
+            <input ref="input" :class="classes.input" @transitionstart="transitionStart" @transitionend="transitionEnd" @focus="activate" placeholder="Search shows..." type="search" @input="searchShows" />
         </div>
         <ShowSearchResultContainer v-show="showContainer">
             <ShowSearchResult :result="result" v-if="result" />
