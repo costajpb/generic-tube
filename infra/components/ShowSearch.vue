@@ -11,7 +11,12 @@ import useTransition from '@/infra/composables/useTransition'
 
 const result = ref<Show[] | undefined>(undefined)
 const isLoading = ref(false)
+const input = ref<HTMLInputElement | null>(null)
 const useCase = new SearchShows()
+const isActive = ref(false)
+
+const activate = () => (isActive.value = true)
+const deactivate = () => (isActive.value = false)
 
 const searchShows = (event: Event) => {
   const target = event.target as HTMLInputElement
@@ -33,19 +38,12 @@ const searchShows = (event: Event) => {
   })()
 }
 
-const isActive = ref(false)
-
-const activate = () => (isActive.value = true)
-const deactivate = () => (isActive.value = false)
-
 const showContainer = computed(
   () => !isTransitioning.value && isActive.value && (result.value || isLoading.value)
 )
 
-const input = ref<HTMLInputElement | null>(null)
-
-const setFocus = () => {
-  if (!isActive.value) input.value?.focus()
+const setFocus = (ev: Event) => {
+  if (ev.target !== input.value && !isActive.value) input.value?.focus()
 }
 
 const isTransitioning = useTransition(input)
