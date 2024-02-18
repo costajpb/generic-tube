@@ -30,6 +30,7 @@
         display: grid;
         grid-template-columns: auto 1fr;
         gap: var(--layout-margin-inline-default);
+        align-items: center;
     }
 
     .title {       
