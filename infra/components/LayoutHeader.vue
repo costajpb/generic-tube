@@ -9,7 +9,7 @@ const isHome = computed(() => route.path === '/')
 <template>
   <header :class="classes.container">
     <component :class="classes.title" :is="isHome ? 'h1' : 'a'" :href="isHome ? undefined : '/'">
-      ABN Amro Tube
+      Generic Tube
     </component>
     <div :class="classes.extra">
       <slot></slot>

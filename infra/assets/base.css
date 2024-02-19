@@ -17,9 +17,9 @@ a {
 
 :root {
   /* colors */
-  --color-branding-primary-100: #008479;
-  --color-branding-primary-200: #005f5e;
-  --color-branding-secondary: #f3c000;
+  --color-branding-primary-100: #ae3ec9;
+  --color-branding-primary-200: #702682;
+  --color-branding-secondary: #ffa94d;
   --color-text-default-on-brand: white;
   --color-text-muted-on-light: var(--gray-6);
   --color-background-default: white;
