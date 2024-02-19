@@ -18,7 +18,7 @@
   }
 
   > * {
-    height: 150px;
+    height: 130px;
   }
 }
 </style>

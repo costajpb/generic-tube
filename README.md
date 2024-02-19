@@ -96,4 +96,4 @@ Were this project to be developed further, even though it features all the given
 - Assets optimization — thumbnail images are too big, rendering the dashboard a bit slow, while those in the jumbotron don't look crisp on wide screens.
 - Search results should not show when moving back from the details page on the desktop view.
 - Full page reloads should be avoided while keeping the use of the DDD use scenario methods.
-- Improve the layout algorithms for listings where cover images with a quirky aspect ratio let the background color show through.
+- A more informed UX design decision on how to tackle the listing display of shows considering the variety of possible cover image aspect ratios.
